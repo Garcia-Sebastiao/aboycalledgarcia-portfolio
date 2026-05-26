@@ -28,10 +28,10 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body cz-shortcut-listen="true" className="min-h-full relative flex flex-col">
+      <body cz-shortcut-listen="true" className="min-h-full overflow-x-hidden relative flex flex-col">
         <Particles
           className="absolute inset-0 z-0"
-          quantity={500}
+          quantity={800}
           ease={30}
           color="#fff"
           size={0.2}

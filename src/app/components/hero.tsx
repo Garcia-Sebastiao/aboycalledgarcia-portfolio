@@ -1,9 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { Header } from "@/components/layout/header/header";
 import { Button } from "@/components/ui/button";
-import { Particles } from "@/components/ui/particles";
 import { ChevronDown } from "lucide-react";
-import { Suspense } from "react";
 
 export function Hero() {
   return (
@@ -15,17 +13,6 @@ export function Hero() {
           alt="Hero Pattern"
         />
       </div>
-
-      <Suspense fallback={<></>}>
-        <Particles
-          className="absolute inset-0 z-0"
-          quantity={400}
-          ease={30}
-          color="#fff"
-          size={0.2}
-          refresh
-        />
-      </Suspense>
 
       <div className="w-full absolute top-0 left-0 h-full grid grid-cols-12">
         {Array.from({ length: 12 }).map((_, index) => (
