@@ -1,6 +1,7 @@
 import { About } from "./components/about";
 import { Experience } from "./components/experience/experience";
 import { Hero } from "./components/hero";
+import { Projects } from "./components/projects";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <div className="w-full flex flex-col items-center gap-y-42.5">
         <About />
         <Experience />
+        <Projects />
       </div>
     </div>
   );
