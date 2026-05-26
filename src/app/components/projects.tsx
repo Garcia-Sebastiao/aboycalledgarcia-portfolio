@@ -1,3 +1,4 @@
+import { Marquee } from "@/components/ui/marquee";
 import { ChevronRight } from "lucide-react";
 
 export function Projects() {
@@ -17,19 +18,23 @@ export function Projects() {
         </p>
       </div>
 
-      <div className="flex w-full gap-x-8 items-center gap-y-6">
-        {Array.from({ length: 14 }).map((_, index) => (
-          <div key={index} className="flex flex-col gap-y-6 min-w-75">
-            <div className="w-full h-50 rounded-2xl bg-[#181818]"></div>
+      <div className="w-full overflow-hidden relative">
+        <Marquee pauseOnHover className="[--duration:40s]">
+          {Array.from({ length: 14 }).map((_, index) => (
+            <div key={index} className="flex flex-col gap-y-6 min-w-75">
+              <div className="w-full h-50 rounded-2xl bg-[#181818]"></div>
 
-            <div className="flex items-start">
-              <h5 className="text-white max-w-67.5 font-bold text-xl">
-                Aura Ai - Mental health assistant
-              </h5>
-              <ChevronRight className="size-5 text-white" />
+              <div className="flex items-start">
+                <h5 className="text-white max-w-67.5 font-bold text-xl">
+                  Aura Ai - Mental health assistant
+                </h5>
+                <ChevronRight className="size-5 text-white" />
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </Marquee>
+        <div className="from-background pointer-events-none absolute inset-y-0 -left-32 w-1/4 bg-linear-to-r"></div>
+        <div className="from-background pointer-events-none absolute inset-y-0 -right-32 w-1/4 bg-linear-to-l"></div>
       </div>
     </div>
   );

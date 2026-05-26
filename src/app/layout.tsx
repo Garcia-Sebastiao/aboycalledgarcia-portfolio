@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Particles } from "@/components/ui/particles";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +28,17 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body cz-shortcut-listen="true" className="min-h-full relative flex flex-col">
+        <Particles
+          className="absolute inset-0 z-0"
+          quantity={500}
+          ease={30}
+          color="#fff"
+          size={0.2}
+          refresh
+        />
+        {children}
+      </body>
     </html>
   );
 }
