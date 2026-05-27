@@ -1,17 +1,420 @@
+"use client";
+/* eslint-disable @next/next/no-img-element */
+
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 import { GeneralLines } from "./lines/general-lines";
 import { MainLine } from "./lines/main-line";
 import { ExperienceNodeLeft, ExperienceNodeRight } from "./lines/node";
 
-/* eslint-disable @next/next/no-img-element */
+gsap.registerPlugin(useGSAP, ScrollTrigger, ScrambleTextPlugin);
+
 export function Experience() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  const titleLine1Ref = useRef<HTMLSpanElement>(null);
+  const titleLine2Ref = useRef<HTMLSpanElement>(null);
+  const brandsRef = useRef<HTMLDivElement>(null);
+  const paragraphRef = useRef<HTMLParagraphElement>(null);
+
+  useGSAP(() => {
+    if (!sectionRef.current) return;
+
+    const ctx = gsap.context(() => {
+      /**
+       * --------------------------------------------------------
+       * SVG ELEMENTS
+       * --------------------------------------------------------
+       */
+
+      const generalPaths = gsap.utils.toArray<SVGPathElement>(".general-path");
+
+      const generalCircles =
+        gsap.utils.toArray<SVGCircleElement>(".general-circle");
+
+      const mainLine =
+        document.querySelector<SVGPathElement>(".main-line-path");
+
+      const mainCircle =
+        document.querySelector<SVGCircleElement>(".main-line-circle");
+
+      /**
+       * --------------------------------------------------------
+       * PREPARE GENERAL LINES
+       * --------------------------------------------------------
+       */
+
+      generalPaths.forEach((path) => {
+        const length = path.getTotalLength();
+
+        gsap.set(path, {
+          strokeDasharray: length,
+          strokeDashoffset: length,
+        });
+      });
+
+      gsap.set(generalCircles, {
+        scale: 0,
+        opacity: 0,
+        transformOrigin: "center",
+      });
+
+      /**
+       * --------------------------------------------------------
+       * MAIN LINE PREP
+       * --------------------------------------------------------
+       */
+
+      if (mainLine) {
+        const length = mainLine.getTotalLength();
+
+        gsap.set(mainLine, {
+          strokeDasharray: length,
+          strokeDashoffset: length,
+        });
+
+        gsap.set(mainCircle, {
+          scale: 0,
+          opacity: 0,
+          transformOrigin: "center",
+        });
+
+        /**
+         * --------------------------------------------------------
+         * MAIN LINE SCROLL GROWTH
+         * --------------------------------------------------------
+         */
+
+        gsap.to(mainLine, {
+          strokeDashoffset: 0,
+          ease: "none",
+
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 35%",
+            end: "bottom bottom",
+            scrub: 1.2,
+          },
+        });
+
+        gsap.to(mainCircle, {
+          scale: 1,
+          opacity: 1,
+          duration: 0.8,
+          ease: "back.out(2)",
+
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "bottom 85%",
+            toggleActions: "play none none reverse",
+          },
+        });
+      }
+
+      /**
+       * --------------------------------------------------------
+       * MASTER TIMELINE
+       * --------------------------------------------------------
+       */
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 72%",
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      /**
+       * --------------------------------------------------------
+       * TITLE REVEAL (NEW - BLUR + SMOOTH)
+       * --------------------------------------------------------
+       */
+
+      tl.fromTo(
+        [titleLine1Ref.current, titleLine2Ref.current],
+        {
+          opacity: 0,
+          y: 24,
+          filter: "blur(12px)",
+        },
+        {
+          opacity: 1,
+          y: 0,
+          filter: "blur(0px)",
+          duration: 1.1,
+          ease: "power4.out",
+          stagger: 0.12,
+        }
+      );
+
+      /**
+       * --------------------------------------------------------
+       * PARAGRAPH
+       * --------------------------------------------------------
+       */
+
+      tl.fromTo(
+        paragraphRef.current,
+        {
+          opacity: 0,
+          y: 24,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+        },
+        "-=0.6",
+      );
+
+      /**
+       * --------------------------------------------------------
+       * BRANDS REVEAL (LOGOS)
+       * --------------------------------------------------------
+       */
+
+      const brandItems = gsap.utils.toArray<HTMLImageElement>(
+        brandsRef.current?.querySelectorAll("img") || [],
+      );
+
+      // estado inicial (antes da animação)
+      gsap.set(brandItems, {
+        opacity: 0,
+        y: 20,
+        scale: 0.92,
+        filter: "blur(10px)",
+      });
+
+      tl.to(
+        brandItems,
+        {
+          opacity: 1, // mantém teu design original (60%)
+          y: 0,
+          scale: 1,
+          filter: "blur(0px)",
+          duration: 0.9,
+          ease: "power3.out",
+          stagger: 0.12,
+        },
+        "-=0.4", // entra junto do final das linhas para sensação contínua
+      );
+
+      /**
+       * --------------------------------------------------------
+       * GENERAL LINES DRAW
+       * --------------------------------------------------------
+       */
+
+      tl.to(
+        generalPaths,
+        {
+          strokeDashoffset: 0,
+          duration: 1.8,
+          stagger: 0.08,
+          ease: "power2.out",
+        },
+        "-=0.5",
+      );
+
+      tl.to(
+        generalCircles,
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 0.6,
+          stagger: 0.06,
+          ease: "back.out(2)",
+        },
+        "-=1.2",
+      );
+
+      /**
+       * --------------------------------------------------------
+       * EXPERIENCE ITEMS
+       * --------------------------------------------------------
+       */
+
+      const experienceItems =
+        gsap.utils.toArray<HTMLElement>(".experience-item");
+
+      experienceItems.forEach((item) => {
+        const nodePath = item.querySelector<SVGPathElement>(".exp-node-path");
+
+        const nodeCircle =
+          item.querySelector<SVGCircleElement>(".exp-node-circle");
+
+        const content = item.querySelector<HTMLElement>(".experience-content");
+
+        const logo = item.querySelector<HTMLElement>(".experience-logo");
+
+        if (!nodePath || !content || !logo) return;
+
+        /**
+         * --------------------------------------------------------
+         * NODE INITIAL STATE
+         * --------------------------------------------------------
+         */
+
+        const nodeLength = nodePath.getTotalLength();
+
+        gsap.set(nodePath, {
+          strokeDasharray: nodeLength,
+          strokeDashoffset: nodeLength,
+        });
+
+        gsap.set(nodeCircle, {
+          scale: 0,
+          opacity: 0,
+          transformOrigin: "center",
+        });
+
+        /**
+         * --------------------------------------------------------
+         * CONTENT INITIAL STATE
+         * --------------------------------------------------------
+         */
+
+        gsap.set(content, {
+          opacity: 0,
+          y: 48,
+          filter: "blur(10px)",
+        });
+
+        gsap.set(logo, {
+          opacity: 0,
+          scale: 0.8,
+          rotate: -8,
+          filter: "blur(10px)",
+        });
+
+        /**
+         * --------------------------------------------------------
+         * ITEM TIMELINE
+         * --------------------------------------------------------
+         */
+
+        const itemTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: item,
+            start: "top 72%",
+            toggleActions: "play none none reverse",
+          },
+        });
+
+        /**
+         * --------------------------------------------------------
+         * NODE DRAW
+         * --------------------------------------------------------
+         */
+
+        itemTl.to(nodePath, {
+          strokeDashoffset: 0,
+          duration: 1,
+          ease: "power3.out",
+        });
+
+        itemTl.to(
+          nodeCircle,
+          {
+            scale: 1,
+            opacity: 1,
+            duration: 0.45,
+            ease: "back.out(2.5)",
+          },
+          "-=0.45",
+        );
+
+        /**
+         * --------------------------------------------------------
+         * CONTENT REVEAL
+         * --------------------------------------------------------
+         */
+
+        itemTl.to(
+          content,
+          {
+            opacity: 1,
+            y: 0,
+            filter: "blur(0px)",
+            duration: 1.1,
+            ease: "power4.out",
+          },
+          "-=0.1",
+        );
+
+        itemTl.to(
+          logo,
+          {
+            opacity: 1,
+            scale: 1,
+            rotate: 0,
+            filter: "blur(0px)",
+            duration: 1,
+            ease: "back.out(1.8)",
+          },
+          "-=0.85",
+        );
+
+        /* --------------------------------------------------------
+         * CAREER BADGE REVEAL
+         * --------------------------------------------------------
+         */
+
+        const careerBadge = document.querySelector(".career-badge");
+
+        if (careerBadge) {
+          gsap.set(careerBadge, {
+            opacity: 0,
+            scale: 0.7,
+            y: 24,
+            rotate: -4,
+            filter: "blur(10px)",
+          });
+
+          tl.to(
+            careerBadge,
+            {
+              opacity: 1,
+              scale: 1,
+              y: 0,
+              rotate: 0,
+              filter: "blur(0px)",
+              duration: 1,
+              ease: "back.out(2.4)",
+            },
+            "-=1",
+          );
+        }
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className="w-full relative container mx-auto mt-20 items-center flex flex-col gap-y-20">
+    <div
+      ref={sectionRef}
+      className="w-full relative container mx-auto mt-20 items-center flex flex-col gap-y-20"
+    >
       <div className="flex flex-col items-center gap-y-6">
         <h2 className="text-[40px] font-extrabold text-white max-w-xl text-center">
-          Explore between my journeys.
+          <span ref={titleLine1Ref} className="inline-block">
+            Explore between
+          </span>{" "}
+          <span ref={titleLine2Ref} className="inline-block">
+            my journeys.
+          </span>
         </h2>
 
-        <p className="text-white/60 text-center leading-7 max-w-191">
+        <p
+          ref={paragraphRef}
+          className="text-white/60 text-center leading-7 max-w-191"
+        >
           With over 5 years of experience, I specialize in developing scalable
           web and mobile applications with a strong focus on performance and
           user experience. My work spans from corporate management platforms and
@@ -21,7 +424,7 @@ export function Experience() {
       </div>
 
       <div className="flex flex-col items-center">
-        <div className="flex items-center gap-x-28">
+        <div ref={brandsRef} className="flex items-center gap-x-28">
           <img
             className="w-35.5 grayscale brightness-100 opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-500"
             src="/images/brands/pnclique.png"
@@ -56,7 +459,8 @@ export function Experience() {
         <div className="relative left-4 flex flex-col items-center mt-12">
           <GeneralLines />
 
-          <div className="px-8 w-fit -ml-4 py-2.5 h-12 -mt-8 bg-white rounded-2xl font-bold text-2xl">
+          {/* CAREER BADGE */}
+          <div className="career-badge px-8 w-fit -ml-4 py-2.5 h-12 -mt-8 bg-white rounded-2xl font-bold text-2xl">
             My Career
           </div>
 
@@ -65,15 +469,19 @@ export function Experience() {
               <MainLine />
             </div>
 
-            <div className="flex absolute  flex-col gap-y-10 -left-2 top-24 items-center">
-              <div className="flex flex-col gap-y-6 -left-2 top-33 items-center">
+            <div className="flex absolute flex-col gap-y-10 -left-2 top-24 items-center">
+              {/* ====================================================== */}
+              {/* PN CLIQUE */}
+              {/* ====================================================== */}
+
+              <div className="experience-item flex flex-col gap-y-6 items-center">
                 <div className="relative right-13.5">
                   <ExperienceNodeLeft color="#00C3D0" />
                 </div>
 
                 <div className="flex items-center gap-x-22">
-                  <div className="flex pr-11 flex-col gap-y-4 items-start">
-                    <div className="">
+                  <div className="experience-content flex pr-11 flex-col gap-y-4 items-start">
+                    <div>
                       <h3 className="text-2xl font-bold min-w-104 text-white">
                         PN Clique - Frontend Developer
                       </h3>
@@ -104,27 +512,31 @@ export function Experience() {
                   </div>
 
                   <img
-                    className="w-65"
+                    className="experience-logo w-65"
                     src="/images/brands/pnclique.png"
                     alt="PN Clique"
                   />
                 </div>
               </div>
 
-              <div className="flex relative left-27.5 flex-col gap-y-6 items-center">
+              {/* ====================================================== */}
+              {/* MONABELE */}
+              {/* ====================================================== */}
+
+              <div className="experience-item flex relative left-27.5 flex-col gap-y-6 items-center">
                 <div className="relative left-14.5">
                   <ExperienceNodeRight color="#fff" />
                 </div>
 
                 <div className="flex items-center gap-x-22">
                   <img
-                    className="w-65"
+                    className="experience-logo w-65"
                     src="/images/brands/monabele.png"
                     alt="Monabele"
                   />
 
-                  <div className="flex pl-11 flex-col gap-y-4 items-start">
-                    <div className="">
+                  <div className="experience-content flex pl-11 flex-col gap-y-4 items-start">
+                    <div>
                       <h3 className="text-2xl font-bold min-w-104 text-white">
                         Monabele - Frontend Developer
                       </h3>
@@ -156,14 +568,18 @@ export function Experience() {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-y-6 -left-2 top-33 items-center">
+              {/* ====================================================== */}
+              {/* MIRANTES */}
+              {/* ====================================================== */}
+
+              <div className="experience-item flex flex-col gap-y-6 items-center">
                 <div className="relative right-13.5">
                   <ExperienceNodeLeft color="#0B89CE" />
                 </div>
 
                 <div className="flex items-center gap-x-22">
-                  <div className="flex pr-14 flex-col gap-y-4 items-start">
-                    <div className="">
+                  <div className="experience-content flex pr-14 flex-col gap-y-4 items-start">
+                    <div>
                       <h3 className="text-2xl font-bold min-w-104 text-white">
                         Mirantes - Frontend Developer
                       </h3>
@@ -194,27 +610,31 @@ export function Experience() {
                   </div>
 
                   <img
-                    className="w-55"
+                    className="experience-logo w-55"
                     src="/images/brands/mirantes.png"
                     alt="Mirantes"
                   />
                 </div>
               </div>
 
-              <div className="flex relative left-27.5 flex-col gap-y-6 items-center">
+              {/* ====================================================== */}
+              {/* NJILA */}
+              {/* ====================================================== */}
+
+              <div className="experience-item flex relative left-27.5 flex-col gap-y-6 items-center">
                 <div className="relative left-14.5">
                   <ExperienceNodeRight color="#FF8D28" />
                 </div>
 
                 <div className="flex items-center gap-x-22">
                   <img
-                    className="w-55"
+                    className="experience-logo w-55"
                     src="/images/brands/njila.png"
                     alt="Njila"
                   />
 
-                  <div className="flex pl-20 flex-col gap-y-4 items-start">
-                    <div className="">
+                  <div className="experience-content flex pl-20 flex-col gap-y-4 items-start">
+                    <div>
                       <h3 className="text-2xl font-bold min-w-104 text-white">
                         NjilaBrand - CTO
                       </h3>
@@ -246,14 +666,18 @@ export function Experience() {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-y-6 -left-2 top-33 items-center">
+              {/* ====================================================== */}
+              {/* TIS */}
+              {/* ====================================================== */}
+
+              <div className="experience-item flex flex-col gap-y-6 items-center">
                 <div className="relative right-13.5">
                   <ExperienceNodeLeft color="#036EF2" />
                 </div>
 
                 <div className="flex items-center gap-x-22">
-                  <div className="flex pr-10 flex-col gap-y-4 items-start">
-                    <div className="">
+                  <div className="experience-content flex pr-10 flex-col gap-y-4 items-start">
+                    <div>
                       <h3 className="text-2xl font-bold min-w-104 text-white">
                         TIS - Developer Analyst
                       </h3>
@@ -284,7 +708,7 @@ export function Experience() {
                   </div>
 
                   <img
-                    className="w-60"
+                    className="experience-logo w-60"
                     src="/images/brands/tis.png"
                     alt="TIS"
                   />

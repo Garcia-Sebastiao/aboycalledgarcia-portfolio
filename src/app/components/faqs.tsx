@@ -1,9 +1,18 @@
+"use client";
+
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const faqs = [
   {
@@ -34,9 +43,79 @@ const faqs = [
 ];
 
 export function Faqs() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      if (!sectionRef.current) return;
+
+      const ctx = gsap.context(() => {
+        const items = gsap.utils.toArray<HTMLElement>(".faq-item");
+
+        // initial states
+        gsap.set(titleRef.current, {
+          opacity: 0,
+          y: 24,
+          filter: "blur(12px)",
+        });
+
+        gsap.set(items, {
+          opacity: 0,
+          y: 24,
+          filter: "blur(10px)",
+        });
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 75%",
+            toggleActions: "play none none reverse",
+          },
+        });
+
+        /**
+         * TITLE
+         */
+        tl.to(titleRef.current, {
+          opacity: 1,
+          y: 0,
+          filter: "blur(0px)",
+          duration: 1,
+          ease: "power4.out",
+        });
+
+        /**
+         * ITEMS STAGGER
+         */
+        tl.to(
+          items,
+          {
+            opacity: 1,
+            y: 0,
+            filter: "blur(0px)",
+            duration: 0.9,
+            stagger: 0.08,
+            ease: "power3.out",
+          },
+          "-=0.6",
+        );
+      }, sectionRef);
+
+      return () => ctx.revert();
+    },
+    { scope: sectionRef },
+  );
+
   return (
-    <div className="w-full container mx-auto px-8 relative items-center flex flex-col gap-y-12">
-      <div className="flex flex-col items-center gap-y-6">
+    <div
+      ref={sectionRef}
+      className="w-full container mx-auto px-8 relative items-center flex flex-col gap-y-12"
+    >
+      <div
+        ref={titleRef}
+        className="flex flex-col items-center gap-y-6"
+      >
         <h2 className="text-[40px] font-extrabold text-white max-w-xl text-center">
           Everything you need to know
         </h2>
@@ -51,9 +130,9 @@ export function Faqs() {
           <AccordionItem
             key={index}
             value={`item-${index}`}
-            className={
+            className={`faq-item ${
               index > 0 ? "border-b border-white" : "border-y border-white"
-            }
+            }`}
           >
             <AccordionTrigger className="py-6 hover:no-underline">
               <h3 className="font-bold text-[2rem] text-left text-white">
