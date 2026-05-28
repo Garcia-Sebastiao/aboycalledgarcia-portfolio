@@ -25,11 +25,11 @@ export function Header() {
     },
   ];
   return (
-    <header className="w-full container px-20 mx-auto py-6 flex items-center justify-between">
+    <header className="w-full container px-4 lg:px-20 mx-auto py-6 flex items-center justify-between">
       {Logo}
 
       <nav>
-        <ul className="flex space-x-4">
+        <ul className="hidden lg:flex  space-x-4">
           {links.map((link) => (
             <li key={link.name}>
               <a

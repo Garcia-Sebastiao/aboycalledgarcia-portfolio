@@ -9,7 +9,7 @@ import { Testimonials } from "./components/testimonials";
 
 export default function Home() {
   return (
-    <div className="w-full">
+    <div className="w-full overflow-hidden">
       <Hero />
       <div className="w-full flex relative flex-col items-center gap-y-42.5">
         <About />

@@ -123,10 +123,10 @@ export function About() {
   return (
     <div
       ref={sectionRef}
-      className="w-full relative container mx-auto items-center flex flex-col gap-y-12 mt-42.5"
+      className="w-full relative px-4 container mx-auto items-center flex flex-col gap-y-12 mt-24 lg:mt-42.5"
     >
       <div className="flex flex-col items-center gap-y-6">
-        <h2 className="text-[40px] font-extrabold text-white max-w-md text-center">
+        <h2 className="text-2xl lg:text-[40px] font-extrabold text-white max-w-md text-center">
           <span ref={titleLine1Ref} className="inline-block">
             Checkout my
           </span>{" "}
@@ -135,13 +135,13 @@ export function About() {
           </span>
         </h2>
 
-        <p ref={textRef} className="text-white/60 text-center max-w-md">
+        <p ref={textRef} className="text-white/60 text-sm lg:text-base text-center max-w-md">
           Checkout the main stacks i normally use to develop every project i
           work on.
         </p>
       </div>
 
-      <div ref={iconsRef} className="flex gap-x-8 items-center">
+      <div ref={iconsRef} className="grid grid-cols-3 lg:flex gap-6 lg:gap-8 items-center">
         {stacks.map((Icon, index) => (
           <div
             key={index}

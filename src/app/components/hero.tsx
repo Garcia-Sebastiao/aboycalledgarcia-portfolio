@@ -224,7 +224,10 @@ export function Hero() {
         <Header />
 
         <div className="flex mt-20.75 gap-y-12 flex-col items-center">
-          <div ref={avatarRef} className="w-45 h-45 flex will-change-transform">
+          <div
+            ref={avatarRef}
+            className="w-32 lg:w-45 h-32 mt-8 lg:mt-0 lg:h-45 flex will-change-transform"
+          >
             <img
               src="/images/avatar.png"
               className="w-full h-full"
@@ -232,61 +235,65 @@ export function Hero() {
             />
           </div>
 
-          <div ref={titleWrapperRef} className="flex items-center gap-x-32">
+          <div
+            ref={titleWrapperRef}
+            className="flex items-center gap-x-4 lg:gap-x-32"
+          >
             <span
               ref={leftBracketRef}
-              className="text-9xl left-12 relative text-white font-bold"
+              className="text-5xl lg:text-9xl lg:left-12 relative text-white font-bold"
             >
               {"<"}
             </span>
 
-            <div className="flex flex-col items-center">
-              <span
-                ref={title1Ref}
-                className="font-extrabold leading-24 text-7xl text-white max-w-4xl text-center"
-              >
-                FRONTEND
-              </span>
-              <span
-                ref={title2Ref}
-                className="font-extrabold leading-24 text-7xl text-white max-w-4xl text-center"
-              >
-                DEVELOPER
-              </span>
+            <div className="flex flex-col text-2xl lg:text-7xl font-extrabold leading-8 lg:leading-24 text-white max-w-4xl text-center items-center">
+              <span ref={title1Ref}>FRONTEND</span>
+              <span ref={title2Ref}>DEVELOPER</span>
             </div>
 
             <span
               ref={rightBracketRef}
-              className="text-9xl right-12 relative text-white font-bold"
+              className="text-5xl lg:text-9xl lg:right-12 relative text-white font-bold"
             >
               {">"}
             </span>
           </div>
 
-          <div ref={subInfoRef} className="flex items-center gap-x-12">
-            <div className="flex-1 min-w-65 h-px bg-white/80" />
+          <div
+            ref={subInfoRef}
+            className="flex items-center -mt-9 lg:mt-0 gap-x-12"
+          >
+            <div className="hidden lg:flex flex-1 min-w-65 h-px bg-white/80" />
 
             <span
               ref={subInfotextRef}
-              className="uppercase font-extrabold text-white/80"
+              className="uppercase text-xs text-center leading-5 lg:leading-normal px-6 lg:text-base font-bold lg:font-extrabold text-white/80"
             >
               Garcia Sebastião - Creative Web Developer
             </span>
 
-            <div className="flex-1 min-w-65 h-px bg-white/80" />
+            <div className="hidden lg:flex flex-1 min-w-65 h-px bg-white/80" />
           </div>
         </div>
 
         <div
           ref={bottomContentRef}
-          className="w-full px-20 container mt-32 self-end mx-auto flex items-center justify-between"
+          className="w-full lg:px-20 container mt-40 flex-col lg:flex-row lg:mt-32 self-end mx-auto flex items-center lg:justify-between"
         >
-          <Button className="font-extrabold text-white/80" variant="ghost">
+          <Button
+            className="font-bold lg:font-extrabold text-white/80"
+            variant="ghost"
+          >
             EXPLORE TO KNOW MORE
-            <ChevronDown className="size-6" />
+            <ChevronDown className="hidden lg:flex size-6" />
           </Button>
 
-          <span className="text-white/80 leading-6 text-justify max-w-xs">
+          <div className="flex lg:hidden flex-col items-center">
+            <div className="w-px bg-white/40 h-24 mt-6" />
+            <ChevronDown className="size-6 text-white/40" />
+          </div>
+
+          <span className="text-white/80 hidden lg:flex leading-6 text-justify max-w-xs">
             With over 5 years of experience, I specialize in developing scalable
             web and mobile applications with a strong focus on performance and
             user experience.
