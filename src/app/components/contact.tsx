@@ -139,24 +139,24 @@ export function Contact() {
   return (
     <div
       ref={sectionRef}
-      className="flex w-full mt-60 relative items-center justify-center"
+      className="flex w-full px-4 mt-10 lg:mt-60 relative items-center justify-center"
     >
       <img
         src="/images/work1.png"
         alt="Work"
-        className="contact-img-left absolute left-0 w-1/4"
+        className="contact-img-left hidden lg:block absolute left-0 w-1/4"
       />
 
       <img
         src="/images/work2.png"
         alt="Work"
-        className="contact-img-right absolute right-0 w-1/4"
+        className="contact-img-right hidden lg:block absolute right-0 w-1/4"
       />
 
       <div className="flex flex-col items-center gap-y-6">
         <h2
           ref={titleRef}
-          className="text-5xl text-white leading-16 font-extrabold max-w-198.5 text-center"
+          className="text-2xl lg:text-5xl text-white leading-8 lg:leading-16 font-extrabold max-w-198.5 text-center"
         >
           LETS CONNECT AND SHARE IDEAS.
         </h2>

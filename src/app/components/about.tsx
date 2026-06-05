@@ -141,11 +141,11 @@ export function About() {
         </p>
       </div>
 
-      <div ref={iconsRef} className="grid grid-cols-3 lg:flex gap-6 lg:gap-8 items-center">
+      <div ref={iconsRef} className="grid grid-cols-3 md:grid-cols-6 place-items-center place-content-center lg:flex gap-6 lg:gap-8 items-center">
         {stacks.map((Icon, index) => (
           <div
             key={index}
-            className="stack-item w-20 border border-white/30 h-20 rounded-xl bg-white/5 flex items-center justify-center"
+            className="stack-item w-16 md:w-20 border border-white/30 h-16 md:h-20 rounded-xl p-3 lg:p-0 bg-white/5 flex items-center justify-center"
           >
             {Icon}
           </div>

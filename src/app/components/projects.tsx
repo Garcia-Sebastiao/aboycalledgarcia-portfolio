@@ -104,10 +104,10 @@ export function Projects() {
       ref={sectionRef}
       className="w-full relative items-center flex flex-col gap-y-12"
     >
-      <div className="flex flex-col items-center gap-y-6">
+      <div className="flex px-2 flex-col items-center gap-y-6">
         <h2
           ref={titleRef}
-          className="text-[40px] font-extrabold text-white max-w-2xl text-center"
+          className="text-2xl lg:text-[40px] font-extrabold text-white max-w-2xl text-center"
         >
           Check out some projects i worked on.
         </h2>
@@ -125,16 +125,16 @@ export function Projects() {
       </div>
 
       <div className="w-full overflow-hidden relative">
-        <Marquee pauseOnHover className="[--duration:40s]">
+        <Marquee  pauseOnHover className="[--duration:40s]">
           {Array.from({ length: 14 }).map((_, index) => (
             <div
               key={index}
-              className="project-item flex flex-col gap-y-6 min-w-75"
+              className="project-item flex flex-col gap-y-4 min-w-75"
             >
               <div className="w-full h-50 rounded-2xl bg-[#181818]" />
 
-              <div className="flex items-start">
-                <h5 className="text-white max-w-67.5 font-bold text-xl">
+              <div className="flex items-start w-full justify-between">
+                <h5 className="text-white leading-6 max-w-67.5 font-bold text-sm lg:text-xl">
                   Aura Ai - Mental health assistant
                 </h5>
                 <ChevronRight className="size-5 text-white" />

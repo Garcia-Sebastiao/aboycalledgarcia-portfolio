@@ -59,10 +59,10 @@ export function Testimonials() {
       ref={sectionRef}
       className="w-full relative items-center flex flex-col gap-y-12"
     >
-      <div className="flex flex-col items-center gap-y-6">
+      <div className="flex px-4 flex-col items-center gap-y-6">
         <h2
           ref={titleRef}
-          className="text-[40px] font-extrabold text-white max-w-2xl text-center"
+          className="text-2xl lg:text-[40px] font-extrabold text-white max-w-2xl text-center"
         >
           People who trusted on my work.
         </h2>
@@ -76,7 +76,7 @@ export function Testimonials() {
               className="rounded-2xl hover:scale-105 mr-2 transition-transform duration-200"
               duration={600}
             >
-              <div className="flex p-5 rounded-2xl bg-[#181818] flex-col gap-y-4 min-w-90 max-w-90">
+              <div className="flex p-5 rounded-2xl bg-[#181818] flex-col gap-y-4 min-w-80 lg:min-w-90 max-w-70 lg:max-w-80 border border-white/10">
                 <div className="flex items-center gap-x-2.5">
                   <Avatar className="size-8">
                     <AvatarImage src="https://github.com/shadcn.png" />
@@ -93,7 +93,7 @@ export function Testimonials() {
                   </div>
                 </div>
 
-                <p className="text-white font-semibold text-sm text-left leading-6">
+                <p className="text-white font-semibold text-xs lg:text-sm text-left leading-6">
                   It is a long established fact that a reader will be distracted
                   by the readable content of a page when looking at its layout.
                 </p>
@@ -109,7 +109,7 @@ export function Testimonials() {
               className="rounded-2xl hover:scale-105 mr-2 transition-transform duration-200"
               duration={600}
             >
-              <div className="flex p-5 rounded-2xl bg-[#181818] flex-col gap-y-4 min-w-90 max-w-90">
+               <div className="flex p-5 rounded-2xl bg-[#181818] flex-col gap-y-4 min-w-80 lg:min-w-90 max-w-70 lg:max-w-80 border border-white/10">
                 <div className="flex items-center gap-x-2.5">
                   <Avatar className="size-8">
                     <AvatarImage src="https://github.com/shadcn.png" />
@@ -126,7 +126,7 @@ export function Testimonials() {
                   </div>
                 </div>
 
-                <p className="text-white font-semibold text-sm text-left leading-6">
+                <p className="text-white font-semibold text-xs lg:text-sm text-left leading-6">
                   It is a long established fact that a reader will be distracted
                   by the readable content of a page when looking at its layout.
                 </p>

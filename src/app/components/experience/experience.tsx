@@ -24,12 +24,6 @@ export function Experience() {
     if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {
-      /**
-       * --------------------------------------------------------
-       * SVG ELEMENTS
-       * --------------------------------------------------------
-       */
-
       const generalPaths = gsap.utils.toArray<SVGPathElement>(".general-path");
 
       const generalCircles =
@@ -40,12 +34,6 @@ export function Experience() {
 
       const mainCircle =
         document.querySelector<SVGCircleElement>(".main-line-circle");
-
-      /**
-       * --------------------------------------------------------
-       * PREPARE GENERAL LINES
-       * --------------------------------------------------------
-       */
 
       generalPaths.forEach((path) => {
         const length = path.getTotalLength();
@@ -62,12 +50,6 @@ export function Experience() {
         transformOrigin: "center",
       });
 
-      /**
-       * --------------------------------------------------------
-       * MAIN LINE PREP
-       * --------------------------------------------------------
-       */
-
       if (mainLine) {
         const length = mainLine.getTotalLength();
 
@@ -81,12 +63,6 @@ export function Experience() {
           opacity: 0,
           transformOrigin: "center",
         });
-
-        /**
-         * --------------------------------------------------------
-         * MAIN LINE SCROLL GROWTH
-         * --------------------------------------------------------
-         */
 
         gsap.to(mainLine, {
           strokeDashoffset: 0,
@@ -114,12 +90,6 @@ export function Experience() {
         });
       }
 
-      /**
-       * --------------------------------------------------------
-       * MASTER TIMELINE
-       * --------------------------------------------------------
-       */
-
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -127,12 +97,6 @@ export function Experience() {
           toggleActions: "play none none reverse",
         },
       });
-
-      /**
-       * --------------------------------------------------------
-       * TITLE REVEAL (NEW - BLUR + SMOOTH)
-       * --------------------------------------------------------
-       */
 
       tl.fromTo(
         [titleLine1Ref.current, titleLine2Ref.current],
@@ -148,14 +112,8 @@ export function Experience() {
           duration: 1.1,
           ease: "power4.out",
           stagger: 0.12,
-        }
+        },
       );
-
-      /**
-       * --------------------------------------------------------
-       * PARAGRAPH
-       * --------------------------------------------------------
-       */
 
       tl.fromTo(
         paragraphRef.current,
@@ -172,17 +130,10 @@ export function Experience() {
         "-=0.6",
       );
 
-      /**
-       * --------------------------------------------------------
-       * BRANDS REVEAL (LOGOS)
-       * --------------------------------------------------------
-       */
-
       const brandItems = gsap.utils.toArray<HTMLImageElement>(
         brandsRef.current?.querySelectorAll("img") || [],
       );
 
-      // estado inicial (antes da animação)
       gsap.set(brandItems, {
         opacity: 0,
         y: 20,
@@ -193,7 +144,7 @@ export function Experience() {
       tl.to(
         brandItems,
         {
-          opacity: 1, // mantém teu design original (60%)
+          opacity: 1,
           y: 0,
           scale: 1,
           filter: "blur(0px)",
@@ -201,14 +152,8 @@ export function Experience() {
           ease: "power3.out",
           stagger: 0.12,
         },
-        "-=0.4", // entra junto do final das linhas para sensação contínua
+        "-=0.4",
       );
-
-      /**
-       * --------------------------------------------------------
-       * GENERAL LINES DRAW
-       * --------------------------------------------------------
-       */
 
       tl.to(
         generalPaths,
@@ -233,12 +178,6 @@ export function Experience() {
         "-=1.2",
       );
 
-      /**
-       * --------------------------------------------------------
-       * EXPERIENCE ITEMS
-       * --------------------------------------------------------
-       */
-
       const experienceItems =
         gsap.utils.toArray<HTMLElement>(".experience-item");
 
@@ -254,12 +193,6 @@ export function Experience() {
 
         if (!nodePath || !content || !logo) return;
 
-        /**
-         * --------------------------------------------------------
-         * NODE INITIAL STATE
-         * --------------------------------------------------------
-         */
-
         const nodeLength = nodePath.getTotalLength();
 
         gsap.set(nodePath, {
@@ -272,12 +205,6 @@ export function Experience() {
           opacity: 0,
           transformOrigin: "center",
         });
-
-        /**
-         * --------------------------------------------------------
-         * CONTENT INITIAL STATE
-         * --------------------------------------------------------
-         */
 
         gsap.set(content, {
           opacity: 0,
@@ -292,12 +219,6 @@ export function Experience() {
           filter: "blur(10px)",
         });
 
-        /**
-         * --------------------------------------------------------
-         * ITEM TIMELINE
-         * --------------------------------------------------------
-         */
-
         const itemTl = gsap.timeline({
           scrollTrigger: {
             trigger: item,
@@ -305,12 +226,6 @@ export function Experience() {
             toggleActions: "play none none reverse",
           },
         });
-
-        /**
-         * --------------------------------------------------------
-         * NODE DRAW
-         * --------------------------------------------------------
-         */
 
         itemTl.to(nodePath, {
           strokeDashoffset: 0,
@@ -328,12 +243,6 @@ export function Experience() {
           },
           "-=0.45",
         );
-
-        /**
-         * --------------------------------------------------------
-         * CONTENT REVEAL
-         * --------------------------------------------------------
-         */
 
         itemTl.to(
           content,
@@ -359,11 +268,6 @@ export function Experience() {
           },
           "-=0.85",
         );
-
-        /* --------------------------------------------------------
-         * CAREER BADGE REVEAL
-         * --------------------------------------------------------
-         */
 
         const careerBadge = document.querySelector(".career-badge");
 
@@ -518,10 +422,6 @@ export function Experience() {
                   />
                 </div>
               </div>
-
-              {/* ====================================================== */}
-              {/* MONABELE */}
-              {/* ====================================================== */}
 
               <div className="experience-item flex relative left-27.5 flex-col gap-y-6 items-center">
                 <div className="relative left-14.5">

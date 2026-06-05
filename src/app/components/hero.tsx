@@ -226,7 +226,7 @@ export function Hero() {
         <div className="flex mt-20.75 gap-y-12 flex-col items-center">
           <div
             ref={avatarRef}
-            className="w-32 lg:w-45 h-32 mt-8 lg:mt-0 lg:h-45 flex will-change-transform"
+            className="w-32 md:w-40 lg:w-45 md:h-40 mt-8 lg:mt-0 lg:h-45 flex will-change-transform"
           >
             <img
               src="/images/avatar.png"
@@ -246,7 +246,7 @@ export function Hero() {
               {"<"}
             </span>
 
-            <div className="flex flex-col text-2xl lg:text-7xl font-extrabold leading-8 lg:leading-24 text-white max-w-4xl text-center items-center">
+            <div className="flex flex-col text-2xl md:text-5xl lg:text-7xl font-extrabold leading-8 md:leading-12 lg:leading-24 text-white max-w-4xl text-center items-center">
               <span ref={title1Ref}>FRONTEND</span>
               <span ref={title2Ref}>DEVELOPER</span>
             </div>
@@ -267,7 +267,7 @@ export function Hero() {
 
             <span
               ref={subInfotextRef}
-              className="uppercase text-xs text-center leading-5 lg:leading-normal px-6 lg:text-base font-bold lg:font-extrabold text-white/80"
+              className="uppercase text-xs text-center pt-4 lg:pt-0 leading-5 lg:leading-normal px-6 md:text-base font-bold lg:font-extrabold text-white/80"
             >
               Garcia Sebastião - Creative Web Developer
             </span>

@@ -114,9 +114,9 @@ export function Faqs() {
     >
       <div
         ref={titleRef}
-        className="flex flex-col items-center gap-y-6"
+        className="flex flex-col px-4 items-center gap-y-6"
       >
-        <h2 className="text-[40px] font-extrabold text-white max-w-xl text-center">
+        <h2 className="text-2xl lg:text-[40px] font-extrabold text-white max-w-xl text-center">
           Everything you need to know
         </h2>
 
@@ -134,13 +134,13 @@ export function Faqs() {
               index > 0 ? "border-b border-white" : "border-y border-white"
             }`}
           >
-            <AccordionTrigger className="py-6 hover:no-underline">
-              <h3 className="font-bold text-[2rem] text-left text-white">
+            <AccordionTrigger className="py-4 lg:py-6 hover:no-underline">
+              <h3 className="font-bold text-xl lg:text-[2rem] text-left text-white">
                 {`${index + 1}. ${faq.question}`}
               </h3>
             </AccordionTrigger>
 
-            <AccordionContent className="text-xl text-white/80 pb-6 leading-8">
+            <AccordionContent className="text-sm lg:text-xl text-white/80 pb-6 leading-8">
               {faq.answer}
             </AccordionContent>
           </AccordionItem>
