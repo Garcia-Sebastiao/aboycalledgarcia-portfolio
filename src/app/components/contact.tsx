@@ -1,5 +1,4 @@
 "use client";
-
 /* eslint-disable @next/next/no-img-element */
 
 import { useRef } from "react";
@@ -22,80 +21,70 @@ export function Contact() {
       if (!sectionRef.current) return;
 
       const ctx = gsap.context(() => {
+        const imgLeft =
+          sectionRef.current?.querySelector<HTMLElement>(".contact-img-left");
+        const imgRight =
+          sectionRef.current?.querySelector<HTMLElement>(".contact-img-right");
+
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top 75%",
-            toggleActions: "play none none reverse",
+            once: true,
+          },
+          defaults: {
+            ease: "power3.out",
           },
         });
 
         /**
-         * INITIAL STATES
+         * IMAGES (LATERAIS)
          */
-        gsap.set(titleRef.current, {
-          opacity: 0,
-          y: 30,
-          filter: "blur(14px)",
-        });
-
-        gsap.set(textRef.current, {
-          opacity: 0,
-          y: 18,
-          filter: "blur(8px)",
-        });
-
-        gsap.set(buttonRef.current, {
-          opacity: 0,
-          scale: 0.85,
-        });
-
-        gsap.set([".contact-img-left", ".contact-img-right"], {
-          opacity: 0,
-          x: (i) => (i === 0 ? -80 : 80),
-          filter: "blur(12px)",
-          scale: 0.95,
-        });
-
-        /**
-         * BACK IMAGES (AMBIENT ENTRY)
-         */
-        tl.to(
-          ".contact-img-left",
+        tl.fromTo(
+          imgLeft as HTMLElement,
+          {
+            opacity: 0,
+            x: -80,
+            scale: 0.95,
+          },
           {
             opacity: 1,
             x: 0,
-            filter: "blur(0px)",
             scale: 1,
-            duration: 1.2,
-            ease: "power3.out",
+            duration: 1.1,
           },
           0,
         );
 
-        tl.to(
-          ".contact-img-right",
+        tl.fromTo(
+          imgRight as HTMLElement,
+          {
+            opacity: 0,
+            x: 80,
+            scale: 0.95,
+          },
           {
             opacity: 1,
             x: 0,
-            filter: "blur(0px)",
             scale: 1,
-            duration: 1.2,
-            ease: "power3.out",
+            duration: 1.1,
           },
           0,
         );
 
         /**
-         * TITLE (HERO BLUR REVEAL STYLE)
+         * TITLE
          */
-        tl.to(
+        tl.fromTo(
           titleRef.current,
+          {
+            opacity: 0,
+            y: 30,
+          },
           {
             opacity: 1,
             y: 0,
-            filter: "blur(0px)",
-            duration: 1.1,
+            duration: 1,
             ease: "power4.out",
           },
           "-=0.6",
@@ -104,28 +93,34 @@ export function Contact() {
         /**
          * TEXT
          */
-        tl.to(
+        tl.fromTo(
           textRef.current,
+          {
+            opacity: 0,
+            y: 18,
+          },
           {
             opacity: 1,
             y: 0,
-            filter: "blur(0px)",
-            duration: 0.9,
-            ease: "power3.out",
+            duration: 0.85,
           },
-          "-=0.8",
+          "-=0.7",
         );
 
         /**
-         * BUTTON (POP FEEL)
+         * BUTTON
          */
-        tl.to(
+        tl.fromTo(
           buttonRef.current,
+          {
+            opacity: 0,
+            scale: 0.85,
+          },
           {
             opacity: 1,
             scale: 1,
-            duration: 0.8,
-            ease: "back.out(2)",
+            duration: 0.75,
+            ease: "back.out(1.8)",
           },
           "-=0.6",
         );

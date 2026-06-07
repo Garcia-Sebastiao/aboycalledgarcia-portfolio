@@ -1,10 +1,10 @@
-import { About } from "./components/about";
+import { About } from "./components/about/about";
 import { Contact } from "./components/contact";
-import { Faqs } from "./components/faqs";
+import { Faqs } from "./components/faqs/faqs";
 import { Footer } from "./components/footer";
 import { Hero } from "./components/hero";
-import { Projects } from "./components/projects";
-import { Testimonials } from "./components/testimonials";
+import { Projects } from "./components/projects/projects";
+import { Testimonials } from "./components/testimonials/testimonials";
 import { MainExperience } from "./components/experience/main-experience";
 
 export default function Home() {

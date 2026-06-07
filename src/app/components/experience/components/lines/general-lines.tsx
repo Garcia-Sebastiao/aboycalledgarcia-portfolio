@@ -1,6 +1,11 @@
-export function GeneralLines() {
+interface GeneralLinesProps {
+  svgRef?: React.RefObject<SVGSVGElement | null>;
+}
+
+export function GeneralLines({ svgRef }: GeneralLinesProps) {
   return (
     <svg
+      ref={svgRef}
       width="1025"
       height="270"
       viewBox="0 0 1025 270"

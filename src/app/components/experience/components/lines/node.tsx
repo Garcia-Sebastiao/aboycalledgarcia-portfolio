@@ -25,14 +25,7 @@ export function ExperienceNodeRight({ color }: { color: string }) {
     >
       <path className="exp-node-path" d="M0 8H222" stroke={color} />
 
-      <circle
-        className="exp-node-circle"
-        cx="8"
-        cy="8"
-        r="8"
-        transform="matrix(-1 0 0 1 222 0)"
-        fill={color}
-      />
+      <circle className="exp-node-circle" cx="214" cy="8" r="8" fill={color} />
     </svg>
   );
 }

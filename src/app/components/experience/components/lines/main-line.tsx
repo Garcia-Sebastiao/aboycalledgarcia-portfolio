@@ -1,6 +1,11 @@
-export function MainLine() {
+interface MainLineProps {
+  svgRef?: React.RefObject<SVGSVGElement | null>;
+}
+
+export function MainLine({ svgRef }: MainLineProps) {
   return (
     <svg
+      ref={svgRef}
       width="16"
       height="2711"
       viewBox="0 0 16 2711"
