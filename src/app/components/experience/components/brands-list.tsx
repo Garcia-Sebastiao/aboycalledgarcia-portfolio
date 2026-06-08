@@ -43,7 +43,7 @@ export function BrandsList() {
   return (
     <div
       ref={containerRef}
-      className="flex items-center gap-x-28"
+      className="flex items-center gap-x-32"
     >
       <img
         className="w-35.5 grayscale brightness-100 opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-500"
@@ -64,9 +64,9 @@ export function BrandsList() {
       />
 
       <img
-        className="w-30 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-500"
-        src="/images/brands/njila.png"
-        alt="Njila"
+        className="w-48 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-500"
+        src="/images/brands/statement.png"
+        alt="Statement Labs"
       />
 
       <img

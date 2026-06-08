@@ -8,10 +8,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Marquee } from "@/components/ui/marquee";
 import { testimonials } from "./testimonials.data";
 import { TestimonialCard } from "./testimonial-card";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function TestimonialMarquee() {
+  const translate = useTranslations("home");
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -51,16 +53,25 @@ export function TestimonialMarquee() {
 
   return (
     <div ref={sectionRef} className="w-full overflow-hidden relative">
-      
       <Marquee reverse pauseOnHover className="[--duration:80s]">
         {testimonials.map((t) => (
-          <TestimonialCard key={t.id} {...t} />
+          <TestimonialCard
+            role={translate(`testimonials.items.${t.id}.role`)}
+            message={translate(`testimonials.items.${t.id}.message`)}
+            key={t.id}
+            {...t}
+          />
         ))}
       </Marquee>
 
       <Marquee pauseOnHover className="[--duration:80s]">
         {testimonials.map((t) => (
-          <TestimonialCard key={`${t.id}-2`} {...t} />
+          <TestimonialCard
+            role={translate(`testimonials.items.${t.id}.role`)}
+            message={translate(`testimonials.items.${t.id}.message`)}
+            key={`${t.id}-2`}
+            {...t}
+          />
         ))}
       </Marquee>
 

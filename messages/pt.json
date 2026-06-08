@@ -1,0 +1,134 @@
+{
+  "home": {
+    "header": {
+      "about": "Sobre",
+      "my-journey": "Minha Jornada",
+      "projects": "Alguns Projetos",
+      "testimonials": "Depoimentos",
+      "contact": "Contactos"
+    },
+    "hero-title": {
+      "span1": "FRONTEND",
+      "span2": "DEVELOPER"
+    },
+    "hero-subtitle": "Garcia Sebastião - Desenvolvedor Web Criativo",
+    "hero-description": "Com mais de 5 anos de experiência, criando experiências digitais de alta performance, escaláveis e visualmente impressionantes. Ao fundir um profundo domínio do ecossistema React com uma abordagem analítica à arquitetura de software, transformo requisitos de negócios complexos em interfaces fluidas e centradas no utilizador.",
+    "explore-more": "EXPLORE PARA SABER MAIS",
+    "about": {
+      "title1": "Conheça as minhas",
+      "title2": "tech stacks",
+      "description": "Confira as principais stacks que normalmente utilizo para desenvolver cada projeto em que trabalho."
+    },
+    "experience": {
+      "title1": "Explore um pouco da",
+      "title2": "minha jornada.",
+      "description": "Aqui pode ver a minha jornada profissional, onde tive a oportunidade de trabalhar em projetos empolgantes e colaborar com equipas talentosas. Cada experiência contribuiu para o meu crescimento como desenvolvedor e permitiu-me expandir as minhas competências e conhecimentos no campo do desenvolvimento frontend.",
+      "career-badge": "Minha carreira",
+      "experiences": {
+        "pn-clique": {
+          "focus": "Plataformas de Streaming de Mídia & IA Conversacional",
+          "description": "Contribuí para o desenvolvimento de produtos digitais chave e soluções voltadas para o utilizador, com foco na otimização de performance, usabilidade e design de interface moderno.<br /> <br />Participei no desenvolvimento da plataforma de streaming da empresa, Pn Clique Streaming, projetada para fornecer serviços multimédia sob procura semelhantes aos da Netflix, Spotify e Prime Video; refatorei com sucesso sistemas legados, corrigi gargalos de performance e desenvolvi componentes de renderização principais.<br /> <br />Construí a plataforma de chat unificada da empresa, PN Chat, utilizada para arquitetar chatbots de IA personalizados e otimizar integrações nativas com APIs de mensagens como WhatsApp e Telegram.<br /> <br />Desenhei a UI do website da empresa do zero, entregando uma jornada de utilizador simples, limpa, minimalista e sem fricções."
+        },
+        "mirantes": {
+          "focus": "Soluções Corporativas & Liderança Técnica",
+          "description": "Atuei como desenvolvedor frontend focado no desenvolvimento de aplicações web corporativas resilientes, escalando plataformas internas para recursos humanos corporativos, pipelines de recrutamento e acompanhamento de carreiras de colaboradores.<br /> <br />Nomeado Líder Técnico de Projeto para arquitetar toda a infraestrutura digital do Codepoint, a maior competição de tecnologia e startups de Angola, com um prémio de $20.000 USD. Desenvolvi dashboards multi-tenant para as startups concorrentes e painéis administrativos robustos para gestão de fases e acompanhamento de avaliações em tempo real.<br /> <br />Desenhei e otimizei landing pages de alto tráfego utilizando Framer Motion e React AOS para entregar animações de narrativa fluidas, de alta fidelidade e experiências imersivas de utilizador.<br /> <br />Aumentei significativamente a performance percebida da plataforma e a eficiência de renderização de dados ao implementar conceitos avançados de frontend, como Optimistic Updates, estratégias rigorosas de cache e Intersection Observers."
+        },
+        "njilabrand": {
+          "focus": "Liderança Técnica Estratégica",
+          "description": "Atuando como Diretor de Tecnologia (CTO), conduzindo a visão técnica global, roteiros de produtos e a estratégia de engenharia de software para produtos de branding digital de alto impacto.<br /> <br />Liderando e mentorando equipas de desenvolvimento seniores e multidisciplinares, estabelecendo padrões rigorosos de revisão de código, fluxos modernos de implantação CI/CD e arquiteturas frontend escaláveis.<br /> <br />Fazendo a ponte entre tecnologia e métricas de negócios, garantindo que cada implementação de engenharia esteja estritamente alinhada com os objetivos de escala do cliente, confiabilidade do produto e benchmarks de performance."
+        },
+        "monabele": {
+          "focus": "E-commerce & Experiência do Utilizador",
+          "description": "Liderei o desenvolvimento frontend de soluções de e-commerce de alto tráfego, priorizando extrema responsividade, práticas web modernas e interfaces de utilizador com alta taxa de conversão.<br /> <br />Desenvolvi módulos dinâmicos de montra de lojas, otimizei fluxos de checkout de produtos e implementei micro-interações personalizadas que melhoraram fortemente a retenção de utilizadores e as taxas de conversão de vendas.<br /> <br />Integrei APIs transacionais complexas e seguras e serviços de terceiros, garantindo a persistência de estados, sincronização robusta de dados e uma experiência de compra fluida para milhares de utilizadores."
+        },
+        "statement-labs": {
+          "focus": "Aplicações FinTech & Sistemas Administrativos",
+          "description": "Desenvolvi plataformas de gestão administrativa corporativa e produtos SaaS sólidos, entregando melhorias mensuráveis nos fluxos de trabalho operacionais, densidade de dados e velocidade de navegação.<br /> <br />Contribuí extensivamente para a arquitetura central da interface de utilizador de aplicações financeiras seguras, focando na construção de estados de UI de alta integridade, fluxos de utilizador previsíveis e alinhamento estrito com os requisitos de confiabilidade de dados.<br /> <br />Liderei o desenvolvimento modular de uma plataforma de rastreio segura dedicada ao controlo de produtos corporativos e patentes, salvaguardando dados sensíveis de propriedade intelectual através de uma arquitetura frontend robusta."
+        },
+        "tis": {
+          "focus": "Sistemas de Gestão Fiscal & Arquitetura Corporativa",
+          "description": "Trabalhando como Analista Desenvolvedor, prestando suporte especializado e de missão crítica à Administração Geral Tributária de Angola (AGT) através da plataforma Oracle Public Sector Revenue Management (PSRM).<br /> <br />Garantindo alta disponibilidade, estabilidade do sistema e otimização contínua da infraestrutura fiscal nacional que gere os processos de arrecadação de receitas do Estado e conformidade.<br /> <br />Analisando, diagnosticando e mitigando incidentes críticos de produção, resolvendo gargalos complexos do sistema e traduzindo requisitos legais e fiscais rigorosos em melhorias funcionais de software."
+        }
+      }
+    },
+    "projects": {
+      "title1": "Conheça alguns dos",
+      "title2": "projetos em que trabalhei.",
+      "label": "Uma seleção com curadoria de produtos digitais, plataformas escaláveis e ferramentas de código aberto que arquitetei do zero. Cada projeto representa um desafio único resolvido através de código limpo, orquestração rigorosa de estado e um foco inabalável na velocidade de renderização e retenção de utilizadores."
+    },
+    "testimonials": {
+      "title1": "Pessoas que confiaram",
+      "title2": "no meu trabalho.",
+      "items": {
+        "user1": {
+          "role": "Engenheiro de Software Sénior",
+          "message": "Trabalhar ao lado do Garcia foi um prazer absoluto. O seu profundo conhecimento de gestão de estado e a capacidade de refatorar gargalos legados salvaram, sozinhos, os tempos de carregamento da nossa plataforma."
+        },
+        "user2": {
+          "role": "Gestor de Produto",
+          "message": "O Garcia tem uma combinação rara de forte liderança técnica e visão de produto. O que ele entregou para o nosso ecossistema multi-tenant provou que ele consegue arquitetar sistemas complexos e de alto tráfego sob pressão."
+        },
+        "user3": {
+          "role": "Líder Técnico",
+          "message": "Um engenheiro focado em performance. O Garcia não escreve apenas código; ele preocupa-se profundamente com métricas de renderização, alinhamento estrito de segurança e integrações de API fluidas. Ele é um ativo para qualquer equipa de software."
+        },
+        "user4": {
+          "role": "Diretor de Produto",
+          "message": "O Garcia transformou completamente a experiência do utilizador da nossa plataforma digital corporativa. O seu domínio de estados de UI dinâmicos e micro-interações personalizadas aumentou radicalmente a nossa retenção de utilizadores e as taxas de conversão transacional."
+        },
+        "user5": {
+          "role": "Designer UI/UX",
+          "message": "Como designer, adoro trabalhar com o Garcia. Ele respeita design tokens, a perfeição ao nível do pixel e implementa animações complexas perfeitamente usando Framer Motion. Ele faz a ponte perfeita entre o design e a engenharia."
+        },
+        "user6": {
+          "role": "Administrador de Bases de Dados",
+          "message": "Em arquiteturas de missão crítica, a estabilidade é tudo. A abordagem analítica do Garcia para diagnosticar incidentes na plataforma e traduzir lógicas de negócio rigorosas em software otimizado é excecional."
+        },
+        "user7": {
+          "role": "Desenvolvedor Fullstack",
+          "message": "A execução do Garcia ao construir os nossos sistemas de chat unificados foi de alto nível. Ele lidou com integrações complexas de APIs de mensagens sem esforço, mantendo padrões de base de código limpos e altamente escaláveis."
+        },
+        "user8": {
+          "role": "Cofundador",
+          "message": "O Garcia é altamente proativo e autónomo. Ao construir dashboards de métricas de alto tráfego para as nossas aplicações em crescimento, ele entregou cache de dados robusta e updates otimistas que fizeram a UI parecer instantânea."
+        },
+        "user9": {
+          "role": "Garantia de Qualidade de Software",
+          "message": "Qualidade de código intransigente. O Garcia é um engenheiro que pensa criticamente sobre casos extremos, limites de erro e acessibilidade, garantindo alta disponibilidade para fluxos de utilizadores em escala."
+        }
+      }
+    },
+    "faqs": {
+      "title": "Tudo o que precisa de saber",
+      "subtitle": "Esclareça todas as suas dúvidas.",
+      "questions": {
+        "q1": {
+          "question": "Qual é o cronograma típico de um projeto?",
+          "answer": "O cronograma depende estritamente do escopo, mas o desenvolvimento de um MVP com padrão de produção geralmente dura entre 4 a 8 semanas.<br /> <br />Este cronograma é profundamente otimizado através de sprints ágeis estruturados, dividindo o processo em três fases centrais: descoberta e arquitetura de sistemas, pipelines de desenvolvimento rápido e testes de implantação meticulosos antes da entrega final."
+        },
+        "q2": {
+          "question": "Que informações ou pré-requisitos são necessários para começar?",
+          "answer": "Para garantir um início sem fricções, ter objetivos de negócio claros, requisitos de produto ou wireframes de alto nível é o ideal.<br /> <br />No entanto, se tiver apenas uma ideia inicial, podemos começar com uma fase dedicada ao mapeamento técnico, onde definimos a tech stack, estruturas de dados e dependências arquitetónicas necessárias para materializar o seu produto."
+        },
+        "q3": {
+          "question": "Como garante a qualidade do código, a segurança dos dados e a confidencialidade?",
+          "answer": "A segurança e a confiabilidade da arquitetura nunca são comprometidas. Todo o código-fonte é protegido por acordos rigorosos de confidencialidade (NDA) e implantado através de pipelines robustos de CI/CD.<br /> <br />Aplico protocolos de segurança padrão da indústria, incluindo ambientes seguros, chaves de API encriptadas, camadas de base de dados parametrizadas e procedimentos estritos de manipulação de dados para garantir que a sua plataforma permaneça resiliente contra vulnerabilidades."
+        },
+        "q4": {
+          "question": "Em que indústrias e ambientes técnicos se especializa?",
+          "answer": "A minha principal especialização reside em aplicações FinTech de alta performance, plataformas SaaS corporativas, automação de IA omni-channel e soluções fluidas de streaming multimédia.<br /> <br />Arquitetonicamente, especializo-me no ecossistema JavaScript moderno — especificamente React, Next.js e TypeScript — combinado com orquestrações de dados robustas utilizando ferramentas como Zustand e TanStack Query, com o suporte de arquiteturas de bases de dados relacionais e não-relacionais resilientes."
+        },
+        "q5": {
+          "question": "Como é estruturado o preço para soluções de software corporativo?",
+          "answer": "O preço é totalmente transparente e flexível, adaptado dinamicamente à complexidade geral, cronograma exigido e escopo técnico da aplicação.<br /> <br />Podemos operar num modelo de Preço Fixo para projetos com marcos e entregáveis profundamente definidos, ou num modelo de avença mensal baseado em sprints para produtos ágeis que exigem evolução técnica e escala arquitetónica contínuas."
+        }
+      }
+    },
+    "contact": {
+      "title": "VAMOS NOS CONECTAR E<br />COMPARTILHAR IDEIAS.",
+      "description": "Seja para escalar um produto digital, discutir arquitetura tecnológica ou apenas dizer olá — estou à distância de uma mensagem.<br />Também me pode contactar em qualquer uma das minhas plataformas sociais.",
+      "button": "Vamos conversar"
+    },
+    "back": "Voltar ao topo"
+  }
+}

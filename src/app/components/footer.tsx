@@ -9,12 +9,14 @@ import { LinkedinIcon } from "@/assets/icons/linkedin-icon";
 import { WhatsappIcon } from "@/assets/icons/whatsapp-icon";
 import { XIcon } from "@/assets/icons/x-icon";
 import { ChevronUp } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function Footer() {
   const footerRef = useRef<HTMLElement>(null);
   const textRef = useRef<HTMLSpanElement>(null);
   const iconsRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const translate = useTranslations("home");
 
   useGSAP(
     () => {
@@ -98,17 +100,11 @@ export function Footer() {
       ref={footerRef}
       className="flex flex-col-reverse px-4 lg:px-20 gap-y-6 lg:flex-row justify-between w-full mt-10 lg:mt-70 pb-16 items-center container mx-auto"
     >
-      <span
-        ref={textRef}
-        className="text-xl text-white font-bold"
-      >
+      <span ref={textRef} className="text-xl text-white font-bold">
         © {new Date().getFullYear()} aboycalledgarcia
       </span>
 
-      <div
-        ref={iconsRef}
-        className="flex items-center gap-x-6"
-      >
+      <div ref={iconsRef} className="flex items-center gap-x-6">
         {XIcon}
         {WhatsappIcon}
         {LinkedinIcon}
@@ -119,7 +115,7 @@ export function Footer() {
         ref={buttonRef}
         className="text-white hidden lg:flex items-center gap-x-6 font-bold text-xl group"
       >
-        Back to top
+        {translate("back")}
         <ChevronUp className="size-6 transition-transform duration-300 group-hover:-translate-y-1" />
       </button>
     </footer>

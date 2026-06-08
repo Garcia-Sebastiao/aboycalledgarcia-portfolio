@@ -9,10 +9,12 @@ import { Menu, X } from "lucide-react";
 import { Logo } from "@/assets/common/logo";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function Header() {
+  const translate = useTranslations("home");
   const [isSticky, setIsSticky] = useState(false);
 
   const headerRef = useRef<HTMLElement>(null);
@@ -21,11 +23,11 @@ export function Header() {
   const linksRef = useRef<HTMLAnchorElement[]>([]);
 
   const links = [
-    { name: "About", href: "/" },
-    { name: "My Journey", href: "/" },
-    { name: "Some Projects", href: "/" },
-    { name: "Testimonials", href: "/" },
-    { name: "Contacts", href: "/" },
+    { name: translate("header.about"), href: "/" },
+    { name: translate("header.my-journey"), href: "/" },
+    { name: translate("header.projects"), href: "/" },
+    { name: translate("header.testimonials"), href: "/" },
+    { name: translate("header.contact"), href: "/" },
   ];
 
   useGSAP(() => {
@@ -171,7 +173,7 @@ export function Header() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-white/60 text-sm hover:text-white"
+                className="text-white/60 hover:text-white"
               >
                 {link.name}
               </a>

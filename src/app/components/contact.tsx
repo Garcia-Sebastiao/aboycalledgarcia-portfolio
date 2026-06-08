@@ -5,6 +5,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 
@@ -15,6 +16,9 @@ export function Contact() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const textRef = useRef<HTMLParagraphElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+
+  // Inicialização do hook de tradução para a secção de contacto
+  const t = useTranslations("home.contact");
 
   useGSAP(
     () => {
@@ -151,24 +155,22 @@ export function Contact() {
       <div className="flex flex-col items-center gap-y-6">
         <h2
           ref={titleRef}
-          className="text-2xl lg:text-5xl text-white leading-8 lg:leading-16 font-extrabold max-w-198.5 text-center"
-        >
-          LETS CONNECT AND SHARE IDEAS.
-        </h2>
+          className="text-2xl lg:text-5xl text-white leading-8 lg:leading-16 font-extrabold max-w-198.5 text-center uppercase"
+          dangerouslySetInnerHTML={{ __html: t("title") }}
+        />
 
         <p
           ref={textRef}
-          className="text-white/60 text-center"
-        >
-          You can also reach me in any of my social medias, and lets talk.
-        </p>
+          className="text-white/60 text-center leading-6"
+          dangerouslySetInnerHTML={{ __html: t("description") }}
+        />
 
         <Button
           ref={buttonRef}
           variant="default"
-          className="bg-white text-background font-semibold py-2.5 px-12"
+          className="bg-white text-background font-semibold py-2.5 px-12 transition-transform hover:scale-105"
         >
-          Lets talk
+          {t("button")}
         </Button>
       </div>
     </div>

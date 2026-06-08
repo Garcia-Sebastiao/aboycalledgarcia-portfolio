@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { cn } from "@/lib/utils";
 import { ExperienceNodeSmall } from "./lines/node";
 
 type Props = {
@@ -6,6 +7,7 @@ type Props = {
   role: string;
   period: string;
   color: string;
+  description: string;
   logo: string;
 };
 
@@ -15,6 +17,7 @@ export function MobileExperienceItem({
   period,
   color,
   logo,
+  description
 }: Props) {
   return (
     <div className="mobile-experience-item flex flex-col gap-y-4 items-start">
@@ -22,13 +25,13 @@ export function MobileExperienceItem({
         <ExperienceNodeSmall color={color} />
 
         <img
-          className="w-30 mt-2 brightness-100 transition-all duration-500"
+          className={cn("w-30 mt-2 brightness-100 transition-all duration-500", company == 'Statement Labs' && "w-44!")}
           src={logo}
           alt={company}
         />
       </div>
 
-      <div className="mobile-experience-content">
+      <div className="mobile-experience-content flex flex-col">
         <h3 className="text-lg font-bold text-white">
           {company} - {role}
         </h3>
@@ -37,22 +40,7 @@ export function MobileExperienceItem({
 
         <span
           dangerouslySetInnerHTML={{
-            __html: ` I contributed to the development of key digital products
-                      and user-facing solutions, focusing on performance
-                      optimization, usability, and modern interface design.
-                      <br /> <br />
-                      Participated in the development of the company’s streaming
-                      platform, Pn Clique Streaming, designed to deliver
-                      services similar to Netflix, Spotify, and Prime Video;
-                      fixed performance issues and developed core components and
-                      services.
-                      <br /> <br />
-                      Built the company’s unified chat platform, PN Chat, used
-                      to create chatbots and integrate with messaging platforms
-                      such as WhatsApp and Telegram.
-                      <br /> <br />
-                      Designed the company website UI, delivering a simple,
-                      clean, and user-friendly interface.`,
+            __html: description,
           }}
           className="text-left pt-4 text-white/60 text-sm leading-6"
         />

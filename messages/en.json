@@ -1,0 +1,140 @@
+{
+  "home": {
+    "header": {
+      "about": "About",
+      "my-journey": "My Journey",
+      "projects": "Some Projects",
+      "testimonials": "Testimonials",
+      "contact": "Contacts"
+    },
+    "hero-title": {
+      "span1": "FRONTEND",
+      "span2": "DEVELOPER"
+    },
+    "hero-subtitle": "Garcia Sebastião - Creative Web Developer",
+    "hero-description": "With over 5 years of experience, crafting high-performance, scalable, and visually stunning digital experiences. By merging a deep mastery of the React ecosystem with an analytical approach to software architecture, I transform complex business requirements into seamless, user-centric interfaces.",
+    "explore-more": "EXPLORE TO KNOW MORE",
+    "about": {
+      "title1": "Checkout my",
+      "title2": "tech stacks",
+      "description": "Checkout the main stacks I normally use to develop every project I work on."
+    },
+    "experience": {
+      "title1": "Explore between",
+      "title2": "my journey.",
+      "description": "Here you can see my professional journey, where I have had the opportunity to work on exciting projects and collaborate with talented teams. Each experience has contributed to my growth as a developer and has allowed me to expand my skills and knowledge in the field of frontend development.",
+      "career-badge": "My career",
+      "experiences": {
+        "pn-clique": {
+          "focus": "Media Streaming Platforms & Conversational AI",
+          "description": "I contributed to the development of key digital products and user-facing solutions, focusing on performance optimization, usability, and modern interface design.<br /> <br />Participated in the development of the company’s streaming platform, Pn Clique Streaming, designed to deliver on-demand multimedia services similar to Netflix, Spotify, and Prime Video; successfully refactored legacy systems, fixed performance bottlenecks, and developed core rendering components.<br /> <br />Built the company’s unified chat platform, PN Chat, used to architect custom conversational AI chatbots and streamline native integrations with messaging APIs such as WhatsApp and Telegram.<br /> <br />Designed the company website UI from scratch, delivering a simple, clean, minimalist, and frictionless user journey."
+        },
+        "mirantes": {
+          "focus": "Enterprise Solutions & Tech Leadership",
+          "description": "Acted as a core Frontend Developer building resilient enterprise web applications, scaling internal platforms for corporate human resources, recruitment pipelines, and employee career tracking.<br /> <br />Appointed as the Technical Project Lead to architect the entire digital infrastructure for Codepoint, Angola's largest startup and tech competition with a $20,000 USD prize pool. Engineered multi-tenant dashboards for competing startups and robust administration panels for phase management and real-time evaluation tracking.<br /> <br />Designed and optimized high-traffic landing pages utilizing Framer Motion and React AOS to deliver high-fidelity, fluid storytelling animations and immersive user experiences.<br /> <br />Significantly enhanced platform perceived performance and data rendering efficiency by implementing advanced frontend concepts like Optimistic Updates, rigorous caching strategies, and Intersection Observers."
+        },
+        "njilabrand": {
+          "focus": "Strategic Technical Leadership",
+          "description": "Serving as Chief Technology Officer (CTO), driving the overall technical vision, product roadmaps, and software engineering strategy for high-impact digital branding products.<br /> <br />Leading and mentoring cross-functional development teams, establishing strict code review standards, modern CI/CD deployment workflows, and scalable frontend architectures.<br /> <br />Bridging the gap between technology and business metrics, ensuring that every engineering implementation strictly aligns with client scaling goals, product reliability, and performance benchmarks."
+        },
+        "monabele": {
+          "focus": "E-commerce & User Experience",
+          "description": "Spearheaded the frontend development of high-traffic e-commerce solutions, prioritizing extreme responsiveness, modern web practices, and high-conversion user interfaces.<br /> <br />Engineered dynamic storefront modules, streamlined product checkout pipelines, and implemented custom micro-interactions that heavily optimized user retention and conversion rates.<br /> <br />Integrated complex, secure transactional APIs and third-party services, ensuring state persistence, robust data synchronization, and a seamless shopping experience for thousands of users."
+        },
+        "statement-labs": {
+          "focus": "FinTech Applications & Administrative Systems",
+          "description": "Engineered corporate administrative management platforms and solid SaaS products, delivering measurable enhancements to operational workflows, data density, and navigation speeds.<br /> <br />Contributed extensively to the core user interface architecture of secure financial applications, focusing on building high-integrity UI states, predictable user flows, and strict alignment with data reliability requirements.<br /> <br />Spearheaded the modular development of a secure tracking platform dedicated to corporate product control and patenting, safeguarding sensitive intellectual property data through robust frontend architecture."
+        },
+        "tis": {
+          "focus": "Tax Management Systems & Enterprise Architecture",
+          "description": "Working as an Analyst Developer providing specialized mission-critical support to the General Tax Administration of Angola (AGT) through the Oracle Public Sector Revenue Management (PSRM) platform.<br /> <br />Ensuring high availability, system stability, and continuous optimization of the national fiscal infrastructure that manages state revenue collection and compliance processes.<br /> <br />Analyzing, diagnosing, and mitigating critical production incidents, resolving complex system bottlenecks, and translating rigorous legal and tax requirements into functional software enhancements."
+        }
+      }
+    },
+
+    "projects": {
+      "title1": "Check out some",
+      "title2": "projects i worked on.",
+
+      "label": "A curated selection of digital products, scalable platforms, and open-source tools I’ve architected from scratch. Each project represents a unique challenge solved through clean code, rigorous state orchestration, and an unyielding focus on rendering speed and user retention."
+    },
+
+    "testimonials": {
+      "title1": "People who trusted",
+      "title2": "on my work.",
+
+      "items": {
+        "user1": {
+          "role": "Senior Software Engineer",
+          "message": "Working alongside Garcia was an absolute pleasure. His deep understanding of state management and ability to refactor legacy bottlenecks single-handedly saved our platform's load times."
+        },
+        "user2": {
+          "role": "Product Manager",
+          "message": "Garcia has a rare combination of strong technical leadership and product vision. What he delivered for our multi-tenant ecosystem proved he can architect complex, high-traffic systems under pressure."
+        },
+        "user3": {
+          "role": "Tech Lead",
+          "message": "A performance-driven engineer. Garcia doesn't just write code; he cares deeply about rendering metrics, strict security alignment, and seamless API integrations. He's an asset to any software team."
+        },
+        "user4": {
+          "role": "Head of Product",
+          "message": "Garcia completely transformed our enterprise digital platform's user experience. His mastery of dynamic UI states and custom micro-interactions radically boosted our user retention and transactional conversion rates."
+        },
+        "user5": {
+          "role": "UI/UX Designer",
+          "message": "As a designer, I love working with Garcia. He respects design tokens, pixel-perfection, and implements complex animations flawlessly using Framer Motion. He perfectly bridges design and engineering."
+        },
+        "user6": {
+          "role": "Database Administrator",
+          "message": "In mission-critical architectures, stability is everything. Garcia's analytical approach to diagnosing platform incidents and translating rigorous business logic into optimized software is exceptional."
+        },
+        "user7": {
+          "role": "Fullstack Developer",
+          "message": "Garcia's execution while building our unified chat systems was top-tier. He tackled complex messaging API integrations effortlessly, maintaining clean, highly scalable codebase standards."
+        },
+        "user8": {
+          "role": "Co-Founder",
+          "message": "Garcia is highly proactive and autonomous. When building high-traffic metrics dashboards for our scaling applications, he delivered robust data caching and optimistic updates that made the UI feel instant."
+        },
+        "user9": {
+          "role": "Software Quality Assurance",
+          "message": "Uncompromising code quality. Garcia is an engineer who thinks critically about corner cases, error boundaries, and accessibility, ensuring high availability for user flows at scale."
+        }
+      }
+    },
+
+    "faqs": {
+      "title": "Everything you need to know",
+      "subtitle": "Get all of your questions answered.",
+      "questions": {
+        "q1": {
+          "question": "What is the typical timeline for a project?",
+          "answer": "The timeline depends strictly on the scope, but production-grade MVP development usually spans between 4 to 8 weeks.<br /> <br />This timeline is deeply optimized through structured Agile sprints, dividing the process into three core phases: discovery & systems architecture, rapid development pipelines, and meticulous deployment testing before the final delivery."
+        },
+        "q2": {
+          "question": "What information or prerequisites are needed to start?",
+          "answer": "To ensure a frictionless kickoff, having clear business objectives, product requirements, or high-level wireframes is ideal.<br /> <br />However, if you only have a raw idea, we can begin with a dedicated tech scoping phase where we map out the tech stack, data structures, and architectural dependencies needed to materialize your product."
+        },
+        "q3": {
+          "question": "How do you ensure code quality, data security, and confidentiality?",
+          "answer": "Security and architecture reliability are never compromised. All source code is safeguarded under strict NDA agreements and deployed using robust CI/CD pipelines.<br /> <br />I enforce industry-standard security protocols, including secure environments, encrypted API keys, parameterized database layers, and strict data-handling procedures to ensure your platform remains resilient against vulnerabilities."
+        },
+        "q4": {
+          "question": "What industries and technical environments do you specialize in?",
+          "answer": "My core specialization lies in high-performance FinTech applications, enterprise SaaS platforms, omni-channel AI automation, and fluid multimedia streaming solutions.<br /> <br />Architecturally, I specialize in the modern JavaScript ecosystem—specifically React, Next.js, and TypeScript—paired with robust data orchestrations using tools like Zustand and TanStack Query, backed by resilient relational and non-relational database architectures."
+        },
+        "q5": {
+          "question": "How is the pricing structured for corporate software solutions?",
+          "answer": "Pricing is fully transparent and flexible, tailored dynamically to the overall complexity, required timeline, and technical scope of the application.<br /> <br />We can operate on a Fixed-Price model for projects with deeply defined milestones and deliverables, or a monthly retainer/sprint-based model for agile products requiring ongoing technical evolution and architectural scaling."
+        }
+      }
+    },
+    "contact": {
+      "title": " LETS CONNECT AND SHARE IDEAS.",
+      "description": "Whether you want to scale a digital product, discuss tech architecture, or just say hello—I'm just a message away.<br />You can also reach me on any of my social platforms.",
+      "button": "Let's talk"
+    },
+
+    "back": "Back to top"
+  }
+}

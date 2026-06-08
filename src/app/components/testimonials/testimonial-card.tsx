@@ -21,7 +21,7 @@ export function TestimonialCard({
       className="rounded-2xl hover:scale-105 mr-2 transition-transform duration-200"
       duration={600}
     >
-      <div className="testimonial-card flex p-5 rounded-2xl bg-[#181818] flex-col gap-y-4 min-w-80 lg:min-w-90 max-w-80 border border-white/10">
+      <div className="testimonial-card h-64 flex p-5 rounded-2xl bg-[#181818] flex-col gap-y-4 min-w-80 lg:min-w-90 max-w-80 border border-white/10">
         
         <div className="flex items-center gap-x-2.5">
           <Avatar className="size-8">

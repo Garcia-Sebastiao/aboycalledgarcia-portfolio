@@ -3,19 +3,21 @@ import { Title } from "@/components/shared/title";
 
 import { BrandsList } from "./components/brands-list";
 import { Timeline } from "./components/timeline";
+import { useTranslations } from "next-intl";
 
 export function Experience() {
+  const translate = useTranslations("home");
   return (
     <section className="container mx-auto mt-20 flex flex-col items-center gap-y-20">
       <div className="flex flex-col items-center gap-y-6">
-        <Title className="max-w-2xl!" line1="Explore between" line2="my journeys." />
+        <Title
+          className="max-w-2xl!"
+          line1={translate("experience.title1")}
+          line2={translate("experience.title2")}
+        />
 
-        <AnimatedDescription className="max-w-xl">
-          With over 5 years of experience, I specialize in developing scalable
-          web and mobile applications with a strong focus on performance and
-          user experience. My work spans from corporate management platforms and
-          event systems to streaming services and interactive digital
-          experiences.
+        <AnimatedDescription className="max-w-191">
+          {translate("experience.description")}
         </AnimatedDescription>
       </div>
 

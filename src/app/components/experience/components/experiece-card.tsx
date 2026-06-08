@@ -15,6 +15,7 @@ interface Props {
   logo: string;
   logoWidth: string;
   color: string;
+  description: string;
   side: "left" | "right";
   className?: string;
 }
@@ -27,6 +28,7 @@ export function ExperienceCard({
   logoWidth,
   color,
   side,
+  description,
   className,
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -132,7 +134,7 @@ export function ExperienceCard({
         !isLeft ? "relative left-27.5" : ""
       }`}
     >
-      <div className={`relative ${isLeft ? "right-12" : "left-24"}`}>
+      <div className={`relative ${isLeft ? "right-24" : "left-11.5"}`}>
         {isLeft ? (
           <ExperienceNodeLeft color={color} />
         ) : (
@@ -143,7 +145,13 @@ export function ExperienceCard({
       <div className="flex items-center gap-x-22">
         {isLeft ? (
           <>
-            <ExperienceContent company={company} role={role} period={period} />
+            <ExperienceContent
+              description={description}
+              company={company}
+              role={role}
+              period={period}
+              className={className}
+            />
 
             <img
               src={logo}
@@ -160,6 +168,7 @@ export function ExperienceCard({
             />
 
             <ExperienceContent
+              description={description}
               className={className}
               company={company}
               role={role}
@@ -176,11 +185,13 @@ function ExperienceContent({
   company,
   role,
   period,
+  description,
   className,
 }: {
   company: string;
   role: string;
   period: string;
+  description: string;
   className?: string;
 }) {
   return (
@@ -200,22 +211,7 @@ function ExperienceContent({
 
       <span
         dangerouslySetInnerHTML={{
-          __html: ` I contributed to the development of key digital products
-                      and user-facing solutions, focusing on performance
-                      optimization, usability, and modern interface design.
-                      <br /> <br />
-                      Participated in the development of the company’s streaming
-                      platform, Pn Clique Streaming, designed to deliver
-                      services similar to Netflix, Spotify, and Prime Video;
-                      fixed performance issues and developed core components and
-                      services.
-                      <br /> <br />
-                      Built the company’s unified chat platform, PN Chat, used
-                      to create chatbots and integrate with messaging platforms
-                      such as WhatsApp and Telegram.
-                      <br /> <br />
-                      Designed the company website UI, delivering a simple,
-                      clean, and user-friendly interface.`,
+          __html: description,
         }}
         className="text-white/60 text-sm max-w-102.25 leading-6"
       />

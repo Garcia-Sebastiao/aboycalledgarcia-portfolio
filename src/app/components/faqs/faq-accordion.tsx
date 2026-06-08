@@ -4,6 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations } from 'next-intl';
 
 import {
   Accordion,
@@ -13,11 +14,11 @@ import {
 } from "@/components/ui/accordion";
 import { faqs } from "./faqs.data";
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 export function FaqAccordion() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const t = useTranslations('home.faqs.questions');
 
   useGSAP(
     () => {
@@ -54,22 +55,21 @@ export function FaqAccordion() {
 
   return (
     <div ref={sectionRef} className="w-full max-w-225 mx-auto">
-      
       <Accordion type="single" collapsible className="w-full">
         {faqs.map((faq, index) => (
           <AccordionItem
-            key={index}
+            key={faq.id}
             value={`item-${index}`}
             className="faq-item border-b border-white"
           >
             <AccordionTrigger className="py-4 lg:py-6 hover:no-underline">
               <h3 className="font-bold text-xl lg:text-[2rem] text-left text-white">
-                {index + 1}. {faq.question}
+                {index + 1}. {t(`${faq.id}.question`)}
               </h3>
             </AccordionTrigger>
 
             <AccordionContent className="text-sm lg:text-xl text-white/80 pb-6 leading-8">
-              {faq.answer}
+              <div dangerouslySetInnerHTML={{ __html: t(`${faq.id}.answer`) }} />
             </AccordionContent>
           </AccordionItem>
         ))}

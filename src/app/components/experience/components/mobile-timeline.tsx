@@ -8,10 +8,12 @@ import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 
 import { experiences } from "../data";
 import { MobileExperienceItem } from "./mobile-experience-item";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrambleTextPlugin);
 
 export function MobileTimeline() {
+  const translate = useTranslations("home");
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
@@ -158,7 +160,11 @@ export function MobileTimeline() {
 
         <div className="flex pb-18 flex-col gap-y-12 pt-12">
           {experiences.map((exp) => (
-            <MobileExperienceItem key={exp.company} {...exp} />
+            <MobileExperienceItem  description={
+                translate(
+                  `experience.experiences.${exp.id}.description`,
+                ) as string
+              } key={exp.company} {...exp} />
           ))}
         </div>
       </div>

@@ -9,10 +9,12 @@ import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 import { Header } from "@/components/layout/header/header";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrambleTextPlugin);
 
 export function Hero() {
+  const translate = useTranslations("home");
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -177,8 +179,12 @@ export function Hero() {
             </span>
 
             <div className="flex flex-col text-2xl md:text-5xl lg:text-7xl font-extrabold text-white text-center">
-              <span className="hero-title-1">FRONTEND</span>
-              <span className="hero-title-2">DEVELOPER</span>
+              <span className="hero-title-1">
+                {translate("hero-title.span1")}
+              </span>
+              <span className="hero-title-2">
+                {translate("hero-title.span2")}
+              </span>
             </div>
 
             <span className="hero-bracket text-5xl lg:text-9xl text-white font-bold">
@@ -188,20 +194,19 @@ export function Hero() {
 
           <div className="hero-subtext flex items-center gap-x-12">
             <span className="uppercase text-xs md:text-base font-bold text-white/80 text-center">
-              Garcia Sebastião - Creative Web Developer
+              {translate("hero-subtitle")}
             </span>
           </div>
         </div>
 
         <div className="hero-bottom w-full px-4 lg:px-20 container mt-40 flex flex-col lg:flex-row lg:justify-between mx-auto items-center">
           <Button className="font-bold text-white/80" variant="ghost">
-            EXPLORE TO KNOW MORE
+            {translate("explore-more")}
             <ChevronDown className="hidden lg:flex size-6" />
           </Button>
 
-          <span className="hidden lg:flex text-white/80 max-w-xs">
-            With over 5 years of experience, I specialize in developing scalable
-            web and mobile applications with a strong focus on performance.
+          <span className="hidden lg:flex text-white/80 max-w-sm">
+            {translate("hero-description")}
           </span>
         </div>
       </div>

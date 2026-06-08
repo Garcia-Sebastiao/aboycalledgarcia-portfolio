@@ -8,8 +8,10 @@ import { CareerBadge } from "./career-badge";
 import { MainLine } from "./lines/main-line";
 import { ExperienceCard } from "./experiece-card";
 import { experiences } from "../data";
+import { useTranslations } from "next-intl";
 
 export function Timeline() {
+  const translate = useTranslations("home");
   const timelineRef = useRef<HTMLDivElement>(null);
 
   const generalLinesRef = useRef<SVGSVGElement>(null);
@@ -135,7 +137,15 @@ export function Timeline() {
 
         <div className="absolute flex flex-col gap-y-10 -left-2 top-24 items-center">
           {experiences.map((experience) => (
-            <ExperienceCard key={experience.company} {...experience} />
+            <ExperienceCard
+              key={experience.company}
+              {...experience}
+              description={
+                translate(
+                  `experience.experiences.${experience.id}.description`,
+                ) as string
+              }
+            />
           ))}
         </div>
       </div>

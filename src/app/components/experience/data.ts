@@ -1,5 +1,6 @@
 export const experiences = [
   {
+    id: "pn-clique",
     company: "PN Clique",
     role: "Frontend Developer",
     period: "11/2022 - 11/2023",
@@ -7,9 +8,11 @@ export const experiences = [
     logoWidth: "w-65",
     color: "#00C3D0",
     side: "left",
+    className:"right-14"
   },
 
   {
+    id: "monabele",
     company: "Monabele",
     role: "Frontend Developer",
     period: "09/2023 - 02/2025",
@@ -17,37 +20,51 @@ export const experiences = [
     logoWidth: "w-65",
     color: "#FFFFFF",
     side: "right",
-    className: "left-12"
+    className: "left-2",
   },
-
   {
-    company: "Mirantes",
-    role: "Frontend Developer",
-    period: "11/2023 - 07/2025",
-    logo: "/images/brands/mirantes.png",
-    logoWidth: "w-55",
-    color: "#0B89CE",
-    side: "left",
-  },
-
-  {
+    id: "njilabrand",
     company: "NjilaBrand",
     role: "CTO",
     period: "08/2023 - Present",
     logo: "/images/brands/njila.png",
     logoWidth: "w-55",
     color: "#FF8D28",
+    side: "left",
+    className:"right-16"
+  },
+  {
+    id: "mirantes",
+    company: "Mirantes",
+    role: "Frontend Developer",
+    period: "11/2023 - 07/2025",
+    logo: "/images/brands/mirantes.png",
+    logoWidth: "w-55",
+    color: "#0B89CE",
     side: "right",
-    className: "left-16"
+    className: "left-8",
   },
 
   {
+    id: "statement-labs",
+    company: "Statement Labs",
+    role: "Frontend Developer",
+    period: "02/2025 - 07/2025",
+    logo: "/images/brands/statement.png",
+    logoWidth: "w-70",
+    color: "#FFFFFF",
+    side: "left",
+    className:"right-18"
+  },
+  {
+    id: "tis",
     company: "TIS",
     role: "Developer Analyst",
     period: "07/2025 - Present",
     logo: "/images/brands/tis.png",
     logoWidth: "w-60",
     color: "#036EF2",
-    side: "left",
+    side: "right",
+    className: "left-14",
   },
 ] as const;

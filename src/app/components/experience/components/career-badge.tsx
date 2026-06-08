@@ -3,8 +3,10 @@
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useTranslations } from "next-intl";
 
 export function CareerBadge() {
+  const translate = useTranslations("home");
   const badgeRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
@@ -38,7 +40,7 @@ export function CareerBadge() {
       ref={badgeRef}
       className="px-8 py-2.5 h-12 bg-white rounded-2xl font-bold text-2xl w-fit -ml-4 -mt-8"
     >
-      My Career
+      {translate("experience.career-badge")}
     </div>
   );
 }
