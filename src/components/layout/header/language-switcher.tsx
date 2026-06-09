@@ -19,7 +19,7 @@ export function LanguageSwitcher() {
     <div className="flex gap-2">
       {locales.map((locale) => (
         <button
-          className={cn("text-white text-lg lg:text-xl font-medium")}
+          className={cn("text-white text-lg lg:text-base cursor-pointer hover:text-white/80 font-medium")}
           key={locale}
           onClick={() => changeLocale(locale)}
         >
