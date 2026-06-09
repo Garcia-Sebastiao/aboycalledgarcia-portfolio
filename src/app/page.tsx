@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="w-full overflow-hidden">
       <Hero />
-      <div className="w-full flex relative flex-col items-center gap-y-24 lg:gap-y-42.5">
+      <div className="w-full flex relative flex-col items-center gap-y-24 lg:gap-y-32.5">
         <About />
         <MainExperience />
         <Projects />

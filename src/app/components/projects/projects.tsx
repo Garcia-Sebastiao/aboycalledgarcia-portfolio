@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 export function Projects() {
   const translate = useTranslations("home");
   return (
-    <div className="w-full relative items-center flex flex-col gap-y-12">
+    <div id="projects" className="w-full pt-32 relative items-center flex flex-col gap-y-12">
       <div className="flex px-2 flex-col items-center gap-y-6">
         <Title
           className="max-w-3xl!"

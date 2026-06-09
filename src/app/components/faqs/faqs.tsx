@@ -5,7 +5,7 @@ export function Faqs() {
   const t = useTranslations('home.faqs');
 
   return (
-    <div className="w-full container mx-auto px-8 relative flex flex-col items-center gap-y-12">
+    <div className="w-full pt-32 container mx-auto px-8 relative flex flex-col items-center gap-y-12">
       
       <div className="flex flex-col items-center gap-y-6">
         <h2 className="text-2xl lg:text-[40px] font-extrabold text-white max-w-xl text-center">

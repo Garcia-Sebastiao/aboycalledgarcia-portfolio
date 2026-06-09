@@ -137,8 +137,9 @@ export function Contact() {
 
   return (
     <div
+      id="contact"
       ref={sectionRef}
-      className="flex w-full px-4 mt-10 lg:mt-60 relative items-center justify-center"
+      className="flex w-full px-4 pt-32 mt-10 lg:mt-60 relative items-center justify-center"
     >
       <img
         src="/images/work1.png"

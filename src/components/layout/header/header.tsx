@@ -10,6 +10,7 @@ import { Logo } from "@/assets/common/logo";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
+import { LanguageSwitcher } from "./language-switcher";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,11 +24,11 @@ export function Header() {
   const linksRef = useRef<HTMLAnchorElement[]>([]);
 
   const links = [
-    { name: translate("header.about"), href: "/" },
-    { name: translate("header.my-journey"), href: "/" },
-    { name: translate("header.projects"), href: "/" },
-    { name: translate("header.testimonials"), href: "/" },
-    { name: translate("header.contact"), href: "/" },
+    { name: translate("header.about"), href: "#about" },
+    { name: translate("header.my-journey"), href: "#my-journey" },
+    { name: translate("header.projects"), href: "#projects" },
+    { name: translate("header.testimonials"), href: "#testimonials" },
+    { name: translate("header.contact"), href: "#contact" },
   ];
 
   useGSAP(() => {
@@ -183,6 +184,10 @@ export function Header() {
           <div className="flex items-center gap-x-4">
             <Button className="bg-white text-black">Lets talk</Button>
 
+            <div className="hidden lg:block">
+              <LanguageSwitcher />
+            </div>
+
             <button onClick={openMenu} className="lg:hidden text-white text-sm">
               <Menu size={24} />
             </button>
@@ -192,9 +197,9 @@ export function Header() {
 
       <div
         ref={overlayRef}
-        className="fixed inset-0 z-50 opacity-0 pointer-events-none"
+        className="fixed inset-0 z-9999 opacity-0 pointer-events-none"
       >
-        <div className="absolute inset-0 bg-black/70 backdrop-blur-xl" />
+        <div className="absolute inset-0 bg-black/30 backdrop-blur-xl" />
 
         <div
           ref={menuRef}
@@ -213,12 +218,15 @@ export function Header() {
               ref={(el) => {
                 if (el) linksRef.current[i] = el;
               }}
+              href={link.href}
               className="text-white hover:border-b-4 hover:border-b-white cursor-pointer transition-all text-2xl xl:text-7xl font-semibold"
               onClick={closeMenu}
             >
               {link.name}
             </a>
           ))}
+
+          <LanguageSwitcher />
         </div>
       </div>
     </>

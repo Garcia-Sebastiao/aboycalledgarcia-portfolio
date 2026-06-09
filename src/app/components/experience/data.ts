@@ -8,7 +8,7 @@ export const experiences = [
     logoWidth: "w-65",
     color: "#00C3D0",
     side: "left",
-    className:"right-14"
+    className:"right-20"
   },
 
   {
@@ -20,7 +20,7 @@ export const experiences = [
     logoWidth: "w-65",
     color: "#FFFFFF",
     side: "right",
-    className: "left-2",
+    className: "left-0",
   },
   {
     id: "njilabrand",
@@ -31,7 +31,7 @@ export const experiences = [
     logoWidth: "w-55",
     color: "#FF8D28",
     side: "left",
-    className:"right-16"
+    className:"right-24"
   },
   {
     id: "mirantes",
@@ -42,7 +42,7 @@ export const experiences = [
     logoWidth: "w-55",
     color: "#0B89CE",
     side: "right",
-    className: "left-8",
+    className: "left-4",
   },
 
   {
@@ -54,7 +54,7 @@ export const experiences = [
     logoWidth: "w-70",
     color: "#FFFFFF",
     side: "left",
-    className:"right-18"
+    className:"right-26"
   },
   {
     id: "tis",
@@ -65,6 +65,6 @@ export const experiences = [
     logoWidth: "w-60",
     color: "#036EF2",
     side: "right",
-    className: "left-14",
+    className: "left-2",
   },
 ] as const;

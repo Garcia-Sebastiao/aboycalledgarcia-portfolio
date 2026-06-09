@@ -37,7 +37,7 @@ export default function RootLayout({
           <Particles
             className="absolute inset-0 z-0"
             quantity={800}
-            ease={30}
+            ease={10}
             color="#fff"
             size={0.2}
             refresh

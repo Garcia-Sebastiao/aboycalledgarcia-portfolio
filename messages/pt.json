@@ -16,12 +16,12 @@
     "explore-more": "EXPLORE PARA SABER MAIS",
     "about": {
       "title1": "Conheça as minhas",
-      "title2": "tech stacks",
+      "title2": "habilidades.",
       "description": "Confira as principais stacks que normalmente utilizo para desenvolver cada projeto em que trabalho."
     },
     "experience": {
-      "title1": "Explore um pouco da",
-      "title2": "minha jornada.",
+      "title1": "Explore um pouco",
+      "title2": "da minha jornada.",
       "description": "Aqui pode ver a minha jornada profissional, onde tive a oportunidade de trabalhar em projetos empolgantes e colaborar com equipas talentosas. Cada experiência contribuiu para o meu crescimento como desenvolvedor e permitiu-me expandir as minhas competências e conhecimentos no campo do desenvolvimento frontend.",
       "career-badge": "Minha carreira",
       "experiences": {
@@ -52,8 +52,8 @@
       }
     },
     "projects": {
-      "title1": "Conheça alguns dos",
-      "title2": "projetos em que trabalhei.",
+      "title1": "Conheça os projetos",
+      "title2": "em que trabalhei.",
       "label": "Uma seleção com curadoria de produtos digitais, plataformas escaláveis e ferramentas de código aberto que arquitetei do zero. Cada projeto representa um desafio único resolvido através de código limpo, orquestração rigorosa de estado e um foco inabalável na velocidade de renderização e retenção de utilizadores."
     },
     "testimonials": {

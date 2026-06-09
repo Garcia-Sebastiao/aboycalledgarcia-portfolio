@@ -134,7 +134,7 @@ export function ExperienceCard({
         !isLeft ? "relative left-27.5" : ""
       }`}
     >
-      <div className={`relative ${isLeft ? "right-24" : "left-11.5"}`}>
+      <div className={`relative ${isLeft ? "right-30" : "left-6"}`}>
         {isLeft ? (
           <ExperienceNodeLeft color={color} />
         ) : (

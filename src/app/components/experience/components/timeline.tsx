@@ -5,7 +5,6 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { GeneralLines } from "./lines/general-lines";
 import { CareerBadge } from "./career-badge";
-import { MainLine } from "./lines/main-line";
 import { ExperienceCard } from "./experiece-card";
 import { experiences } from "../data";
 import { useTranslations } from "next-intl";
@@ -13,9 +12,9 @@ import { useTranslations } from "next-intl";
 export function Timeline() {
   const translate = useTranslations("home");
   const timelineRef = useRef<HTMLDivElement>(null);
-
+  const mainLineDivRef = useRef<HTMLDivElement>(null);
+  const mainCircleRef = useRef<HTMLDivElement>(null);
   const generalLinesRef = useRef<SVGSVGElement>(null);
-  const mainLineRef = useRef<SVGSVGElement>(null);
 
   useGSAP(
     () => {
@@ -70,42 +69,29 @@ export function Timeline() {
         "-=1.2",
       );
 
-      const mainPath =
-        mainLineRef.current?.querySelector<SVGPathElement>(".main-line-path");
+      gsap.set(mainLineDivRef.current, {
+        scaleY: 0,
+        transformOrigin: "top center",
+      });
 
-      const mainCircle =
-        mainLineRef.current?.querySelector<SVGCircleElement>(
-          ".main-line-circle",
-        );
+      gsap.to(mainLineDivRef.current, {
+        scaleY: 1,
+        duration: 2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: timelineRef.current,
+          start: "top 60%",
+          toggleActions: "play none none none",
+        },
+      });
 
-      if (mainPath) {
-        const length = mainPath.getTotalLength();
-
-        gsap.set(mainPath, {
-          strokeDasharray: length,
-          strokeDashoffset: length,
-        });
-
-        gsap.to(mainPath, {
-          strokeDashoffset: 0,
-          duration: 1.5,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: timelineRef.current,
-            start: "top 60%",
-            toggleActions: "play none none none",
-          },
-        });
-      }
-
-      if (mainCircle) {
-        gsap.set(mainCircle, {
+      if (mainCircleRef.current) {
+        gsap.set(mainCircleRef.current, {
           scale: 0,
           opacity: 0,
-          transformOrigin: "center",
         });
 
-        gsap.to(mainCircle, {
+        gsap.to(mainCircleRef.current, {
           scale: 1,
           opacity: 1,
           duration: 0.8,
@@ -130,12 +116,19 @@ export function Timeline() {
 
       <CareerBadge />
 
-      <div className="relative flex items-center justify-center -ml-5 w-226.5">
-        <div className="relative z-1">
-          <MainLine svgRef={mainLineRef} />
+      <div className="relative flex items-center pb-56 justify-center -ml-5 w-226.5">
+        <div className="absolute flex items-center flex-col top-0 h-full z-1">
+          <div className="overflow-hidden h-full">
+            <div
+              ref={mainLineDivRef}
+              className="w-0.5 h-full bg-white origin-top"
+            />
+          </div>
+
+          <div ref={mainCircleRef} className="w-6 h-6 rounded-full bg-white" />
         </div>
 
-        <div className="absolute flex flex-col gap-y-10 -left-2 top-24 items-center">
+        <div className=" flex flex-col gap-y-10 relative -left-2 top-24 items-center">
           {experiences.map((experience) => (
             <ExperienceCard
               key={experience.company}
