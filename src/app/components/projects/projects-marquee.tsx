@@ -51,10 +51,9 @@ export function ProjectMarquee() {
 
   return (
     <div ref={sectionRef} className="w-full overflow-hidden relative">
-      
       <Marquee pauseOnHover className="[--duration:40s]">
         {projects.map((project) => (
-          <ProjectItem key={project.id} title={project.title} />
+          <ProjectItem key={project.id} project={project} />
         ))}
       </Marquee>
 
