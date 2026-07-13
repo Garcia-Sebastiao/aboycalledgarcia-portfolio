@@ -119,12 +119,12 @@ export function ProjectItem({ project }: { project: ProjectProps }) {
         ))}
       </div>
 
-      <p
+      {/* <p
         ref={descRef}
         className="text-white/50 text-xs leading-5 overflow-hidden opacity-0 h-0"
       >
         {project.description}
-      </p>
+      </p> */}
     </a>
   );
 }

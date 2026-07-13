@@ -51,4 +51,13 @@ export const projects: ProjectProps[] = [
     description:
       "A sleek and intuitive financial dashboard designed for real-time cryptocurrency tracking. The platform aggregates complex market data, offering users interactive charts and visual analytics to monitor price fluctuations, track market trends, and manage asset portfolios through a clean, highly responsive interface.",
   },
+  {
+    id: 4,
+    img: "/images/projects/njila.png",
+    stacks: ["Next.js", "TypeScript", "TailwindCSS", "GSAP", "Framer-Motion"],
+    url: "https://oopsum-crypto.netlify.app/",
+    title: "Oopsum Crypto: Dynamic Cryptocurrency Dashboard",
+    description:
+      "The Official Landing Page of Njilabrand.",
+  },
 ];
