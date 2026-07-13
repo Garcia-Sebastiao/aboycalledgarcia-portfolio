@@ -56,7 +56,7 @@ export const projects: ProjectProps[] = [
     img: "/images/projects/njila.png",
     stacks: ["Next.js", "TypeScript", "TailwindCSS", "GSAP", "Framer-Motion"],
     url: "https://oopsum-crypto.netlify.app/",
-    title: "Oopsum Crypto: Dynamic Cryptocurrency Dashboard",
+    title: "NjilaBrand: Design and Digital Agency",
     description:
       "The Official Landing Page of Njilabrand.",
   },
