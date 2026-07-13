@@ -55,7 +55,7 @@ export const projects: ProjectProps[] = [
     id: 4,
     img: "/images/projects/njila.png",
     stacks: ["Next.js", "TypeScript", "TailwindCSS", "GSAP", "Framer-Motion"],
-    url: "https://oopsum-crypto.netlify.app/",
+    url: "https://njilabrand.vercel.app/",
     title: "NjilaBrand: Design and Digital Agency",
     description:
       "The Official Landing Page of Njilabrand.",
