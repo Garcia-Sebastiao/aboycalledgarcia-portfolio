@@ -5,7 +5,8 @@
       "my-journey": "Minha Jornada",
       "projects": "Alguns Projetos",
       "testimonials": "Depoimentos",
-      "contact": "Contactos"
+      "contact": "Contactos",
+      "lets-talk": "Vamos conversar"
     },
     "hero-title": {
       "span1": "FRONTEND",
@@ -99,7 +100,7 @@
       }
     },
     "faqs": {
-      "title": "Tudo o que precisa de saber",
+      "title": "Perguntas Frequentes.",
       "subtitle": "Esclareça todas as suas dúvidas.",
       "questions": {
         "q1": {
@@ -125,7 +126,7 @@
       }
     },
     "contact": {
-      "title": "VAMOS NOS CONECTAR E<br />COMPARTILHAR IDEIAS.",
+      "title": "VAMOS FALAR  <br /> E TROCAR IDEIAS.",
       "description": "Seja para escalar um produto digital, discutir arquitetura tecnológica ou apenas dizer olá — estou à distância de uma mensagem.<br />Também me pode contactar em qualquer uma das minhas plataformas sociais.",
       "button": "Vamos conversar"
     },

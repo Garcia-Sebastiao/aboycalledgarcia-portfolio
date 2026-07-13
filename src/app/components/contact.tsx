@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
+import { openWhatsApp } from "@/lib/utils";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -94,9 +95,6 @@ export function Contact() {
           "-=0.6",
         );
 
-        /**
-         * TEXT
-         */
         tl.fromTo(
           textRef.current,
           {
@@ -111,9 +109,6 @@ export function Contact() {
           "-=0.7",
         );
 
-        /**
-         * BUTTON
-         */
         tl.fromTo(
           buttonRef.current,
           {
@@ -162,14 +157,16 @@ export function Contact() {
 
         <p
           ref={textRef}
-          className="text-white/60 text-center leading-6"
-          dangerouslySetInnerHTML={{ __html: t("description") }}
-        />
+          className="text-white/60 max-w-2xl text-center leading-6"
+        >
+          {t("description")}
+        </p>
 
         <Button
           ref={buttonRef}
+          onClick={openWhatsApp}
           variant="default"
-          className="bg-white text-background font-semibold py-2.5 px-12 transition-transform hover:scale-105"
+          className="bg-white cursor-pointer hover:brightness-90 transition-all text-background font-semibold py-2.5 px-12 hover:scale-105"
         >
           {t("button")}
         </Button>

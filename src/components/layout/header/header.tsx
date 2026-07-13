@@ -8,7 +8,7 @@ import { Menu, X } from "lucide-react";
 
 import { Logo } from "@/assets/common/logo";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { cn, openWhatsApp } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "./language-switcher";
 
@@ -182,7 +182,12 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-x-4">
-            <Button className="bg-white text-black">Lets talk</Button>
+            <Button
+              onClick={openWhatsApp}
+              className="bg-white hover:brightness-90 transition-all cursor-pointer text-black"
+            >
+              {translate("header.lets-talk")}
+            </Button>
 
             <div className="hidden lg:block">
               <LanguageSwitcher />

@@ -90,11 +90,11 @@ export function ProjectItem({ project }: { project: ProjectProps }) {
       className="project-item group relative flex flex-col gap-y-4 min-w-75 max-w-90 will-change-transform"
     >
       <div className="relative w-full h-50 rounded-2xl bg-[#111111] border border-white/5 overflow-hidden">
-        <img src={project.img} className="w-full h-full object-cover" alt={project.title} />
-
-        <span className="absolute top-4 left-4 font-mono text-[11px] tracking-widest text-white/40">
-          N.{String(project.id).padStart(2, "0")}
-        </span>
+        <img
+          src={project.img}
+          className="w-full h-full object-cover"
+          alt={project.title}
+        />
 
         <button
           ref={linkRef}

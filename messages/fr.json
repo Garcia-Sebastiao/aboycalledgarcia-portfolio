@@ -5,7 +5,8 @@
       "my-journey": "Mon Parcours",
       "projects": "Projets",
       "testimonials": "Témoignages",
-      "contact": "Contact"
+      "contact": "Contact",
+      "lets-talk": "Parlons-en."
     },
     "hero-title": {
       "span1": "FRONTEND",
@@ -20,7 +21,7 @@
       "description": "Découvrez les principales stacks que j'utilise habituellement pour développer chaque projet sur lequel je travaille."
     },
     "experience": {
-      "title1": "Explorez un aperçu de",
+      "title1": "Explorez",
       "title2": "mon parcours.",
       "description": "Vous pouvez voir ici mon parcours professionnel, où j'ai eu l'opportunité de travailler sur des projets passionnants et de collaborer avec des équipes talentueuses. Chaque expérience a contribué à mon évolution en tant que développeur et m'a permis d'élargir mes compétences et mes connaissances dans le domaine du développement frontend.",
       "career-badge": "Ma carrière",
@@ -52,13 +53,13 @@
       }
     },
     "projects": {
-      "title1": "Découvrez quelques-uns des",
-      "title2": "projets sur lesquels j'ai travaillé.",
+      "title1": "Projets sur ",
+      "title2": "lesquels j'ai travaillé.",
       "label": "Une sélection rigoureuse de produits numériques, de plateformes scalables et d'outils open-source que j'ai architecturés à partir de zéro. Chaque projet représente un défi unique résolu par un code propre, une orchestration rigoureuse de l'état et un focus absolu sur la vitesse de rendu et la rétention des utilisateurs."
     },
     "testimonials": {
-      "title1": "Des personnes qui ont fait confiance",
-      "title2": "à mon travail.",
+      "title1": "Témoignages de ",
+      "title2": "partenaires.",
       "items": {
         "user1": {
           "role": "Ingénieur Logiciel Sénior",
@@ -99,7 +100,7 @@
       }
     },
     "faqs": {
-      "title": "Tout ce que vous devez savoir",
+      "title": "Foire aux questions",
       "subtitle": "Obtenez des réponses à toutes vos questions.",
       "questions": {
         "q1": {
@@ -125,7 +126,7 @@
       }
     },
     "contact": {
-      "title": "CONNECTONS-NOUS ET<br />PARTAGEONS DES IDÉES.",
+      "title": "PARTAGEONS<br /> DES IDÉES.",
       "description": "Que ce soit pour mettre à l'échelle un produit numérique, discuter d'architecture technique ou simplement dire bonjour — je ne suis qu'à un message de distance.<br />Vous pouvez également me joindre sur l'une de mes plateformes sociales.",
       "button": "Discutons"
     },

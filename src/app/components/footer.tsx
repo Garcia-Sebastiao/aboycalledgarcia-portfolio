@@ -4,12 +4,12 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-import { InstagramIcon } from "@/assets/icons/instagram-icon";
 import { LinkedinIcon } from "@/assets/icons/linkedin-icon";
 import { WhatsappIcon } from "@/assets/icons/whatsapp-icon";
-import { XIcon } from "@/assets/icons/x-icon";
 import { ChevronUp } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { openWhatsApp } from "@/lib/utils";
+import Link from "next/link";
 
 export function Footer() {
   const footerRef = useRef<HTMLElement>(null);
@@ -105,10 +105,13 @@ export function Footer() {
       </span>
 
       <div ref={iconsRef} className="flex items-center gap-x-6">
-        {XIcon}
-        {WhatsappIcon}
-        {LinkedinIcon}
-        {InstagramIcon}
+        <button onClick={openWhatsApp}>{WhatsappIcon}</button>
+        <Link
+          href="https://www.linkedin.com/in/garcia-sebastiao/"
+          target="_blank"
+        >
+          {LinkedinIcon}
+        </Link>
       </div>
 
       <button
