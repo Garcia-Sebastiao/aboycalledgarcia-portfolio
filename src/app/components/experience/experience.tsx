@@ -8,7 +8,7 @@ import { useTranslations } from "next-intl";
 export function Experience() {
   const translate = useTranslations("home");
   return (
-    <section id="my-journey" className="container pt-32 mx-auto mt-20 flex flex-col items-center gap-y-20">
+    <section id="my-journey" className="container pt-32 mx-auto mt-20 hidden lg:flex flex-col items-center gap-y-20">
       <div className="flex flex-col items-center gap-y-6">
         <Title
           className="max-w-2xl!"

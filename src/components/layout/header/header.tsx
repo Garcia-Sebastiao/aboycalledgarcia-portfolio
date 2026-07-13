@@ -163,7 +163,7 @@ export function Header() {
         ref={headerRef}
         className={cn(
           "w-full transition-all duration-300",
-          isSticky && "backdrop-blur-md border-b border-white/10",
+          isSticky && "backdrop-blur-md",
         )}
       >
         <div className="container px-4 lg:px-20 mx-auto py-6 flex items-center justify-between">
