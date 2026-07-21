@@ -55,6 +55,7 @@
     "projects": {
       "title1": "Conheça os projetos",
       "title2": "em que trabalhei.",
+
       "label": "Uma seleção com curadoria de produtos digitais, plataformas escaláveis e ferramentas de código aberto que arquitetei do zero. Cada projeto representa um desafio único resolvido através de código limpo, orquestração rigorosa de estado e um foco inabalável na velocidade de renderização e retenção de utilizadores."
     },
     "testimonials": {
@@ -75,7 +76,7 @@
         },
         "user4": {
           "role": "Diretor de Produto",
-          "message": "O Garcia transformou completamente a experiência do utilizador da nossa plataforma digital corporativa. O seu domínio de estados de UI dinâmicos e micro-interações personalizadas aumentou radicalmente a nossa retenção de utilizadores e as taxas de conversão transacional."
+          "message": "O Garcia transformou completamente a experiência do utilizador da nossa plataforma digital corporativa. O seu domínio de estados de UI dinâmicos e micro-interações personalizadas aumentou radicalmente."
         },
         "user5": {
           "role": "Designer UI/UX",
