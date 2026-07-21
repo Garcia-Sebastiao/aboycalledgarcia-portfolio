@@ -1,8 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import { cn } from "@/lib/utils";
 
 interface Props {
@@ -13,25 +11,25 @@ interface Props {
 export function AnimatedDescription({ children, className }: Props) {
   const textRef = useRef<HTMLParagraphElement>(null);
 
-  useGSAP(() => {
-    gsap.fromTo(
-      textRef.current,
-      {
-        opacity: 0,
-        y: 20,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: textRef.current,
-          start: "top 85%",
-        },
-      },
-    );
-  });
+  // useGSAP(() => {
+  //   gsap.fromTo(
+  //     textRef.current,
+  //     {
+  //       opacity: 0,
+  //       y: 20,
+  //     },
+  //     {
+  //       opacity: 1,
+  //       y: 0,
+  //       duration: 1,
+  //       ease: "power3.out",
+  //       scrollTrigger: {
+  //         trigger: textRef.current,
+  //         start: "top 85%",
+  //       },
+  //     },
+  //   );
+  // });
 
   return (
     <p

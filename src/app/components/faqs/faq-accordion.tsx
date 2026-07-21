@@ -3,7 +3,6 @@
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslations } from 'next-intl';
 
 import {
@@ -14,7 +13,6 @@ import {
 } from "@/components/ui/accordion";
 import { faqs } from "./faqs.data";
 
-gsap.registerPlugin(ScrollTrigger);
 
 export function FaqAccordion() {
   const sectionRef = useRef<HTMLDivElement>(null);

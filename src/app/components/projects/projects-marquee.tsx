@@ -3,13 +3,11 @@
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { Marquee } from "@/components/ui/marquee";
 import { projects } from "./projects.data";
 import { ProjectItem } from "./project-item";
 
-gsap.registerPlugin(ScrollTrigger);
 
 export function ProjectMarquee() {
   const sectionRef = useRef<HTMLDivElement>(null);

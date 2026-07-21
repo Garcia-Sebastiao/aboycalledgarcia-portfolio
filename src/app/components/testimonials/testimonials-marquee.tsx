@@ -3,14 +3,11 @@
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { Marquee } from "@/components/ui/marquee";
 import { testimonials } from "./testimonials.data";
 import { TestimonialCard } from "./testimonial-card";
 import { useTranslations } from "next-intl";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export function TestimonialMarquee() {
   const translate = useTranslations("home");

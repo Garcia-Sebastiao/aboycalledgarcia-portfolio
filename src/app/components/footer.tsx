@@ -3,7 +3,6 @@
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-
 import { LinkedinIcon } from "@/assets/icons/linkedin-icon";
 import { WhatsappIcon } from "@/assets/icons/whatsapp-icon";
 import { ChevronUp } from "lucide-react";

@@ -4,13 +4,10 @@
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { openWhatsApp } from "@/lib/utils";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export function Contact() {
   const sectionRef = useRef<HTMLDivElement>(null);
