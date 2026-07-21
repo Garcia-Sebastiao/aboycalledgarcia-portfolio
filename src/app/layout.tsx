@@ -35,14 +35,14 @@ export default function RootLayout({
           cz-shortcut-listen="true"
           className="min-h-full overflow-x-hidden relative flex flex-col"
         >
-          <Particles
+          {/* <Particles
             className="absolute inset-0 z-0"
             quantity={800}
             ease={10}
             color="#fff"
             size={0.2}
             refresh
-          />
+          /> */}
           {children}
         </body>
       </NextIntlClientProvider>
